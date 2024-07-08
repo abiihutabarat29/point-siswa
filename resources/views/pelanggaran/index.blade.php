@@ -1,8 +1,12 @@
     @extends('layouts.app')
     @section('content')
-        <x-card>
+        <x-card menu="{{ $menu }}">
             @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
-                <x-createBtn></x-createBtn>
+                <div class="dt-action-buttons text-end pt-3 pt-md-0 mb-3">
+                    <div class="dt-buttons">
+                        <x-createBtn></x-createBtn>
+                    </div>
+                </div>
             @endif
             <x-table>
                 <th style="width:5%">#</th>

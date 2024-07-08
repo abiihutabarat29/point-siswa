@@ -8,7 +8,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Login - SkorsingApps</title>
+    <title>Login - PointApp</title>
 
     <meta name="description" content="" />
 
@@ -93,7 +93,7 @@
                                         </g>
                                     </svg>
                                 </span>
-                                <span class="app-brand-text demo text-body fw-bold">Skorsing</span>
+                                <h4 class="text-body fw-bold mt-3">PointApp</h4>
                             </a>
                         </div>
                         <!-- /Logo -->

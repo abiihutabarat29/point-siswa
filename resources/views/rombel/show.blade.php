@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
-    <div class="px-2">
-        <a href="{{ route('rombel.index') }}" type="button" class="btn btn-outline-danger mb-3">
-            <span class="tf-icons bx bx-reply-all"></span>Kembali
-        </a>
+    <div class="dt-action-buttons text-end pt-3 pt-md-0 mb-3">
+        <div class="dt-buttons">
+            <a href="{{ route('rombel.index') }}" type="button" class="btn btn-secondary">Kembali
+            </a>
+        </div>
     </div>
     <div class="row g-0">
         <div class="col mb-0 px-2">

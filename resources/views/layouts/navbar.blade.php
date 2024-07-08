@@ -6,10 +6,9 @@
         </a>
     </div>
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-        <div class="navbar-nav align-items-center">
-            <div class="nav-item d-flex align-items-center">
-                <h5 class="card-title text-primary">{{ $menu }}</h5>
-            </div>
+        <div class="d-flex align-items-center me-auto">
+            <span class="badge bg-label-secondary me-1">{{ \Carbon\Carbon::now()->isoFormat('dddd, D MMMM Y') }}</span>
+            <span class="badge bg-label-secondary me-1" id="jam" class="ms-2"></span>
         </div>
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             <li class="nav-item lh-1 me-1">
@@ -26,7 +25,8 @@
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                        <img src="{{ asset('assets/img/avatars/1.png') }}" alt class="w-px-40 h-auto rounded-circle" />
+                        <img src="{{ asset('assets/img/avatars/blank.jpg') }}" alt
+                            class="w-px-40 h-auto rounded-circle" />
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -35,7 +35,7 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
-                                        <img src="{{ asset('assets/img/avatars/1.png') }}" alt
+                                        <img src="{{ asset('assets/img/avatars/blank.jpg') }}" alt
                                             class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </div>

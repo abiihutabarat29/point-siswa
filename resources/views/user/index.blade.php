@@ -1,7 +1,11 @@
     @extends('layouts.app')
     @section('content')
-        <x-card>
-            <x-createBtn></x-createBtn>
+        <x-card menu="{{ $menu }}">
+            <div class="dt-action-buttons text-end pt-3 pt-md-0 mb-3">
+                <div class="dt-buttons">
+                    <x-createBtn></x-createBtn>
+                </div>
+            </div>
             <x-table>
                 <th style="width:5%">#</th>
                 <th>ID Card</th>
@@ -37,7 +41,7 @@
                 });
 
 
-                var myTable = DataTable("{{ route('user.index') }}", [{
+                var myTable = DataTable("{{ route('manajemen-user.index') }}", [{
                         "data": null,
                         "orderable": false,
                         "searchable": false,
@@ -74,18 +78,18 @@
                 createModel(createHeading)
 
                 // Edit
-                var editUrl = "{{ route('user.index') }}";
+                var editUrl = "{{ route('manajemen-user.index') }}";
                 var editHeading = "Edit {{ $menu }}";
                 var field = ['name', 'email'];
                 editModel(editUrl, editHeading, field)
 
                 // Save
-                saveBtn("{{ route('user.store') }}", myTable);
+                saveBtn("{{ route('manajemen-user.store') }}", myTable);
 
                 // Delete
                 var fitur = "{{ $menu }}";
-                var editUrl = "{{ route('user.index') }}";
-                var deleteUrl = "{{ route('user.store') }}";
+                var editUrl = "{{ route('manajemen-user.index') }}";
+                var deleteUrl = "{{ route('manajemen-user.store') }}";
                 Delete(fitur, editUrl, deleteUrl, myTable)
             });
         </script>

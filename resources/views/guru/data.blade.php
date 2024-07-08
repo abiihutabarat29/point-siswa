@@ -5,8 +5,8 @@
             <div class="row g-0">
                 <div class="col-md-4 p-2">
                     <div>
-                        <a href="{{ route('guru.index') }}" type="button" class="btn btn-outline-danger mb-3">
-                            <span class="tf-icons bx bx-reply-all"></span>Kembali
+                        <a href="{{ route('guru.index') }}" type="button" class="btn btn-secondary mb-3">
+                            Kembali
                         </a>
                     </div>
                     <x-card>
@@ -70,7 +70,7 @@
                                 </ul>
                             </div>
                             <div class="col">
-                                <button type="submit" class="btn rounded-pill btn-primary float-end">Simpan</button>
+                                <button type="submit" class="btn btn-primary float-end">Simpan</button>
                             </div>
                         </div>
                         <div class="tab-content">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -14,7 +15,10 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $menu = "Menu";
-        return view('dashboard', compact('menu'));
+        $menu = "Dashboard";
+
+        if (Auth::user()->role_id = 1) {
+            return view('dashboard.admin', compact('menu'));
+        }
     }
 }

@@ -1,11 +1,11 @@
     @extends('layouts.app')
     @section('content')
-        <x-card>
+        <x-card menu="{{ $menu }}">
             <div class="dt-action-buttons">
                 <div class="row g-2">
                     <x-button url="{{ route('pelanggaran-siswa.siswa', Crypt::encrypt($rombel->rombel->id)) }}"
                         label="Kembali" icon="bx-reply"></x-button>
-                    <x-btn-create></x-btn-create>
+                    <x-createBtn></x-createBtn>
                 </div>
             </div>
             <x-table>

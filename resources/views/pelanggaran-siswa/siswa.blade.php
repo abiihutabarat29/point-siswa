@@ -1,10 +1,10 @@
     @extends('layouts.app')
     @section('content')
-        <x-card>
-            <div class="dt-action-buttons">
-                <div class="row g-2">
-                    <x-button url="{{ route('pelanggaran-siswa.index') }}" label="Kembali" icon="bx-reply"></x-button>
-                    <x-btn-create></x-btn-create>
+        <x-card menu="{{ $menu }}">
+            <div class="dt-action-buttons text-end pt-3 pt-md-0">
+                <div class="dt-buttons">
+                    <x-button url="{{ route('pelanggaran-siswa.index') }}" label="Kembali"></x-button>
+                    <x-createBtn></x-createBtn>
                 </div>
             </div>
             <x-table>

@@ -1,8 +1,10 @@
     @extends('layouts.app')
     @section('content')
-        <div class="row g-2 mb-4">
-            <x-importBtn></x-importBtn>
-            <x-createBtn></x-createBtn>
+        <div class="dt-action-buttons text-end pt-3 pt-md-0 mb-3">
+            <div class="dt-buttons">
+                <x-importBtn></x-importBtn>
+                <x-createBtn></x-createBtn>
+            </div>
         </div>
         <div class="row mb-5">
             @foreach ($guru as $gur)

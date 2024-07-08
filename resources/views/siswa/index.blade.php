@@ -1,8 +1,8 @@
     @extends('layouts.app')
     @section('content')
-        <x-card>
-            <div class="dt-action-buttons">
-                <div class="row g-2">
+        <x-card menu="{{ $menu }}">
+            <div class="dt-action-buttons text-end pt-3 pt-md-0">
+                <div class="dt-buttons">
                     <x-importBtn></x-importBtn>
                     <x-createBtn></x-createBtn>
                 </div>

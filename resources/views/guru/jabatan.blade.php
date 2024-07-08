@@ -3,17 +3,15 @@
         <form action="{{ route('guru.jabatan', $guru->id) }}" method="POST" class="form-horizontal"
             enctype="multipart/form-data">
             @csrf
-            <div class="row g-0">
-                <div class="col-md-6 p-2">
-                    <a href="{{ route('guru.index') }}" type="button" class="btn btn-outline-danger">
-                        <span class="tf-icons bx bx-reply-all"></span>Kembali
+            <div class="dt-action-buttons text-end pt-3 pt-md-0 mb-3">
+                <div class="dt-buttons">
+                    <a href="{{ route('guru.index') }}" type="button" class="btn btn-secondary me-1">
+                        Kembali
                     </a>
+                    <button type="submit" class="btn btn-primary float-end">Simpan</button>
                 </div>
-                <div class="col-md-6 p-2">
-                    <div class="col">
-                        <button type="submit" class="btn rounded-pill btn-primary float-end">Simpan</button>
-                    </div>
-                </div>
+            </div>
+            <div class="row g-0">
                 <div class="col-md-6 p-2">
                     <x-card>
                         <h6>Detail Guru</h6>

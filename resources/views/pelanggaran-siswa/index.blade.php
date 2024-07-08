@@ -1,6 +1,6 @@
     @extends('layouts.app')
     @section('content')
-        <x-card>
+        <x-card menu="{{ $menu }}">
             <x-table>
                 <th style="width:5%">#</th>
                 <th style="width:15%">Tahun Pelajaran</th>

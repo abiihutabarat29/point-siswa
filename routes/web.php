@@ -34,7 +34,7 @@ Route::get('/', [LoginController::class, 'showLoginForm']);
 
 // Admin
 Route::middleware(['auth', 'role:1'])->group(function () {
-    Route::resource('/user', UserController::class);
+    Route::resource('/manajemen-user', UserController::class);
     Route::resource('/sekolah', SekolahController::class);
 });
 

@@ -1,7 +1,11 @@
     @extends('layouts.app')
     @section('content')
-        <x-card>
-            <x-createBtn></x-createBtn>
+        <x-card menu="{{ $menu }}">
+            <div class="dt-action-buttons text-end pt-3 pt-md-0">
+                <div class="dt-buttons">
+                    <x-createBtn></x-createBtn>
+                </div>
+            </div>
             <x-table>
                 <th style="width:5%">#</th>
                 <th>Nama</th>

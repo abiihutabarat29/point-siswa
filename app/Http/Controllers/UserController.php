@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $menu = 'User';
+        $menu = 'Manajemen User';
         if ($request->ajax()) {
             $data = User::latest();
             return Datatables::of($data)

@@ -21,7 +21,7 @@ class PelanggaranSiswaController extends Controller
 {
     public function index(Request $request)
     {
-        $menu = 'Skor Siswa';
+        $menu = 'Point Siswa';
         $kelas = Kelas::all();
         $jurusan = Jurusan::where('id', '!=', 1)->get();
         $guru = Guru::all();

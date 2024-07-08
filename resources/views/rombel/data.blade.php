@@ -2,20 +2,13 @@
 @section('content')
     <form action="{{ route('rombel.store') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
         @csrf
-        <div class="row g-0">
-            <div class="col">
-                <div>
-                    <a href="{{ route('rombel.index') }}" type="button" class="btn btn-outline-danger mb-3">
-                        <span class="tf-icons bx bx-reply-all"></span>Kembali
-                    </a>
-                </div>
-            </div>
-            <div class="col">
-                <div>
-                    <button type="submit" class="btn btn-primary mb-3 float-end">
-                        Simpan
-                    </button>
-                </div>
+        <div class="dt-action-buttons text-end pt-3 pt-md-0 mb-3">
+            <div class="dt-buttons">
+                <a href="{{ route('rombel.index') }}" type="button" class="btn btn-secondary me-1">Kembali
+                </a>
+                <button type="submit" class="btn btn-primary mb-3 float-end">
+                    Simpan
+                </button>
             </div>
         </div>
         <x-card>

@@ -7,7 +7,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>SkorsingApp | {{ $menu }}</title>
+    <title>PointApp | {{ $menu }}</title>
 
     <meta name="description" content="" />
 
@@ -72,7 +72,10 @@
                                 <script>
                                     document.write(new Date().getFullYear());
                                 </script>
-                                SekolahApps. All rights reserved.
+                                PointApp. All rights reserved.
+                            </div>
+                            <div class="version mb-2 mb-md-0">
+                                Versi 1.0
                             </div>
                         </div>
                     </footer>
