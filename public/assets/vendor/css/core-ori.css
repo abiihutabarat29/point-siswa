@@ -6760,19 +6760,16 @@ label.btn {
 
 .btn-secondary {
   color: #fff;
-  background: linear-gradient(45deg, #323233, #8592a3);
-  border: none;
-  box-shadow: 0 0.125rem 0.25rem 0 rgba(70, 70, 70, 0.4);
-  background-size: 200% 200%;
-  transition: background-position 0.5s ease;
+  background-color: #8592a3;
+  border-color: #8592a3;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(133, 146, 163, 0.4);
 }
 .btn-secondary:hover {
-    color: #fff !important;
-    background-position: right center;
-    border: none !important;
-    transform: translateY(-1px) !important;
+  color: #fff !important;
+  background-color: #788393 !important;
+  border-color: #788393 !important;
+  transform: translateY(-1px) !important;
 }
-
 .btn-check:focus + .btn-secondary, .btn-secondary:focus, .btn-secondary.focus {
   color: #fff;
   background-color: #788393;
@@ -7012,17 +7009,15 @@ label.btn {
 
 .btn-warning {
   color: #fff;
-  background: linear-gradient(45deg, #ffab00, #ffcd68);
-  border: none;
-  box-shadow: 0 0.125rem 0.25rem 0 rgba(105, 108, 255, 0.4);
-  background-size: 200% 200%;
-  transition: background-position 0.5s ease;
+  background-color: #ffab00;
+  border-color: #ffab00;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(255, 171, 0, 0.4);
 }
 .btn-warning:hover {
-    color: #fff !important;
-    background-position: right center;
-    border: none !important;
-    transform: translateY(-1px) !important;
+  color: #fff !important;
+  background-color: #e69a00 !important;
+  border-color: #e69a00 !important;
+  transform: translateY(-1px) !important;
 }
 .btn-check:focus + .btn-warning, .btn-warning:focus, .btn-warning.focus {
   color: #fff;
@@ -7097,17 +7092,15 @@ label.btn {
 
 .btn-danger {
   color: #fff;
-  background: linear-gradient(45deg, #ff2500, #fc8c79);
-  border: none;
-  box-shadow: 0 0.125rem 0.25rem 0 rgba(105, 108, 255, 0.4);
-  background-size: 200% 200%;
-  transition: background-position 0.5s ease;
+  background-color: #ff3e1d;
+  border-color: #ff3e1d;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(255, 62, 29, 0.4);
 }
 .btn-danger:hover {
-    color: #fff !important;
-    background-position: right center;
-    border: none !important;
-    transform: translateY(-1px) !important;
+  color: #fff !important;
+  background-color: #e6381a !important;
+  border-color: #e6381a !important;
+  transform: translateY(-1px) !important;
 }
 .btn-check:focus + .btn-danger, .btn-danger:focus, .btn-danger.focus {
   color: #fff;
