@@ -1,0 +1,281 @@
+[
+    {
+        "id": "1",
+        "name": "Pendidikan Agama dan Budi Pekerti",
+        "kode": "A1",
+        "kelompok_id": "1",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "2",
+        "name": "Pendidikan Pancasila dan Kewarganegaraan",
+        "kode": "A2",
+        "kelompok_id": "1",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "3",
+        "name": "Bahasa Indonesia",
+        "kode": "A3",
+        "kelompok_id": "1",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "4",
+        "name": "Matematika",
+        "kode": "A4",
+        "kelompok_id": "1",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "5",
+        "name": "Sejarah Indonesia",
+        "kode": "A5",
+        "kelompok_id": "1",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "6",
+        "name": "Bahasa Inggris",
+        "kode": "A6",
+        "kelompok_id": "1",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "7",
+        "name": "Seni Budaya",
+        "kode": "B1",
+        "kelompok_id": "2",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "8",
+        "name": "Prakarya dan Kewirausahaan",
+        "kode": "B2",
+        "kelompok_id": "2",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "9",
+        "name": "Pendidikan Jasmani, Olah Raga & Kesehatan",
+        "kode": "B3",
+        "kelompok_id": "2",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "10",
+        "name": "Simulasi Digital",
+        "kode": "C11",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "11",
+        "name": "Fisika",
+        "kode": "C12",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "12",
+        "name": "Kimia",
+        "kode": "C13",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "13",
+        "name": "Sistem Komputer",
+        "kode": "C14",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "14",
+        "name": "Gambar Teknik Otomotif",
+        "kode": "C21",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "15",
+        "name": "Komputer dan Jaringan Dasar",
+        "kode": "C22",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "16",
+        "name": "Pemrograman Dasar",
+        "kode": "C23",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "17",
+        "name": "Teknologi Dasar Otomotif",
+        "kode": "C24",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "18",
+        "name": "Dasar Desain Grafis",
+        "kode": "C25",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "19",
+        "name": "Pekerjaan Dasar Otomotif",
+        "kode": "C26",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "20",
+        "name": "Pemeliharaan Chasis Sepeda Motor",
+        "kode": "C31",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "21",
+        "name": "Pemodelan Perangkat Lunak",
+        "kode": "C32",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "22",
+        "name": "Teknologi Infrastruktur Jaringan",
+        "kode": "C33",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "23",
+        "name": "Basis Data",
+        "kode": "C34",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "24",
+        "name": "Pemeliharaan Kelistrikan Sepeda Motor",
+        "kode": "C35",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "25",
+        "name": "Rancang Bangun Jaringan",
+        "kode": "C36",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "26",
+        "name": "Administrasi Server dan Keamanan Jaringan",
+        "kode": "C37",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "27",
+        "name": "Pemeliharaan Mesin Sepeda Motor",
+        "kode": "C38",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "28",
+        "name": "Pemrograman Berorientasi Obyek",
+        "kode": "C39",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "29",
+        "name": "Pemrograman Web dan Mobile",
+        "kode": "C310",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "30",
+        "name": "Pengembangan Produk Kreatif",
+        "kode": "C311",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    },
+    {
+        "id": "31",
+        "name": "Teknologi Layanan Jaringan",
+        "kode": "C312",
+        "kelompok_id": "3",
+        "status": "1",
+        "created_at": "2024-04-02 11:01:43",
+        "updated_at": "2024-04-02 11:01:43"
+    }
+]

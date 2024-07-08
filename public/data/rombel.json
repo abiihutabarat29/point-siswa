@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "name": "TKJ 1",
+        "kelas_id": 1,
+        "jurusan_id": 3,
+        "guru_id": 1,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 2,
+        "name": "TKJ 2",
+        "kelas_id": 1,
+        "jurusan_id": 3,
+        "guru_id": 2,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 3,
+        "name": "TKJ 3",
+        "kelas_id": 1,
+        "jurusan_id": 3,
+        "guru_id": 3,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 4,
+        "name": "TKJ 1",
+        "kelas_id": 2,
+        "jurusan_id": 3,
+        "guru_id": 4,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 5,
+        "name": "TKJ 2",
+        "kelas_id": 2,
+        "jurusan_id": 3,
+        "guru_id": 5,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 6,
+        "name": "TKJ 3",
+        "kelas_id": 2,
+        "jurusan_id": 3,
+        "guru_id": 6,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 7,
+        "name": "TKJ 1",
+        "kelas_id": 3,
+        "jurusan_id": 3,
+        "guru_id": 7,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 8,
+        "name": "TKJ 2",
+        "kelas_id": 3,
+        "jurusan_id": 3,
+        "guru_id": 8,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 9,
+        "name": "TKJ 3",
+        "kelas_id": 3,
+        "jurusan_id": 3,
+        "guru_id": 9,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 10,
+        "name": "RPL 1",
+        "kelas_id": 1,
+        "jurusan_id": 2,
+        "guru_id": 10,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 11,
+        "name": "RPL 2",
+        "kelas_id": 1,
+        "jurusan_id": 2,
+        "guru_id": 11,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 12,
+        "name": "RPL 3",
+        "kelas_id": 1,
+        "jurusan_id": 2,
+        "guru_id": 12,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 13,
+        "name": "RPL 1",
+        "kelas_id": 2,
+        "jurusan_id": 2,
+        "guru_id": 13,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 14,
+        "name": "RPL 2",
+        "kelas_id": 2,
+        "jurusan_id": 2,
+        "guru_id": 14,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 15,
+        "name": "RPL 3",
+        "kelas_id": 2,
+        "jurusan_id": 2,
+        "guru_id": 15,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 16,
+        "name": "RPL 1",
+        "kelas_id": 3,
+        "jurusan_id": 2,
+        "guru_id": 16,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 17,
+        "name": "RPL 2",
+        "kelas_id": 3,
+        "jurusan_id": 2,
+        "guru_id": 17,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+        "id": 18,
+        "name": "RPL 3",
+        "kelas_id": 3,
+        "jurusan_id": 2,
+        "guru_id": 18,
+        "tapel_id": 1,
+        "created_at": null,
+        "updated_at": null
+    }
+]
