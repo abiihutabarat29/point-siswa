@@ -9,7 +9,7 @@
     </div>
     <div class="menu-inner-shadow"></div>
     <ul class="menu-inner py-1">
-        <x-menu route="{{ url('/') }}" name="dashboard" label="dashboard" icon="bx-home-circle"></x-menu>
+        <x-menu route="{{ route('dashboard') }}" name="dashboard" label="dashboard" icon="bx-home-circle"></x-menu>
         @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
             <li
                 class="menu-item {{ request()->segment(1) == 'tapel' ||
@@ -65,10 +65,15 @@
                 </ul>
             </li> --}}
             {{-- <x-menu route="{{ route('jadwal.index') }}" name="jadwal" label="Jadwal" icon="bxs-calendar"></x-menu> --}}
+            <x-menu route="{{ route('pelanggaran-siswa.index') }}" name="pelanggaran-siswa" label="Point Siswa"
+                icon="bx-detail"></x-menu>
+            <x-menu route="#" name="aktivitas-guru" label="Aktivitas Guru" icon="bx-calendar-check"></x-menu>
         @endif
-        <x-menu route="{{ route('pelanggaran-siswa.index') }}" name="pelanggaran-siswa" label="Point Siswa"
-            icon="bx-detail"></x-menu>
-        <x-menu route="#" name="aktivitas-guru" label="Aktivitas Guru" icon="bx-calendar-check"></x-menu>
+        @if (auth()->user()->role_id == 3)
+            <x-menu route="{{ route('point-pelanggaran-siswa') }}" name="point-pelanggaran-siswa"
+                label="Pelanggaran Siswa" icon="bx-detail"></x-menu>
+            <x-menu route="#" name="aktivitas-guru" label="Aktivitas Guru" icon="bx-calendar-check"></x-menu>
+        @endif
         {{-- @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 3)
             <x-menu route="{{ route('absensi.index') }}" name="absensi" label="Absensi"
                 icon="bx-clipboard"></x-menu>

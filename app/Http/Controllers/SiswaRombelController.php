@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Semester;
+use App\Models\Siswa;
 use App\Models\SiswaRombel;
 use App\Models\Tapel;
 use Illuminate\Http\Request;

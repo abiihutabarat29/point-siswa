@@ -4,10 +4,10 @@
             <x-table>
                 <th style="width:5%">#</th>
                 <th style="width:15%">Tahun Pelajaran</th>
-                <th style="width:15%">Rombel</th>
-                <th style="width:10%">Jurusan</th>
+                <th style="width:10%">Rombel</th>
+                <th style="width:15%">Jurusan</th>
                 <th>Wali</th>
-                <th style="width:10%" class="text-center">Jlh Anggota</th>
+                <th style="width:10%" class="text-center">Jlh Siswa</th>
                 <th style="width:15%" class="text-center">Action</th>
             </x-table>
         </x-card>

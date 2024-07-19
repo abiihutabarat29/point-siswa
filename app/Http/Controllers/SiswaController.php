@@ -124,7 +124,7 @@ class SiswaController extends Controller
             $fileFoto = null;
         }
 
-        Siswa::updateOrCreate(
+        $siswa = Siswa::updateOrCreate(
             [
                 'id' => $request->hidden_id
             ],
@@ -145,6 +145,7 @@ class SiswaController extends Controller
                 'id_card' => $request->nisn
             ],
             [
+                'siswa_id'  => $siswa->id,
                 'id_card'   => $request->nisn,
                 'name'      => $request->name,
                 'password'  => "12345678",

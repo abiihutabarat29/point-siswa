@@ -95,7 +95,7 @@ class GuruController extends Controller
             $fileFoto = null;
         }
 
-        Guru::updateOrCreate(
+        $guru = Guru::updateOrCreate(
             [
                 'id' =>  $request->hidden_id
             ],
@@ -120,6 +120,7 @@ class GuruController extends Controller
                 'id_card' => $request->nip
             ],
             [
+                'guru_id'   => $guru->id,
                 'id_card'   => $request->nip,
                 'name'      => $request->name,
                 'password'  => "12345678",

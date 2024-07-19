@@ -73,6 +73,7 @@ function createModel(createHeading) {
 function editModel(editUrl, editHeading, field) {
     $("body").on("click", ".edit", function () {
         const editId = $(this).data("id");
+        console.log('ID', editId)
         $.get(editUrl + "/" + editId + "/edit", function (data) {
             $("#ajaxForm").trigger("reset");
             $("#saveBtn").val("edit");
@@ -80,6 +81,7 @@ function editModel(editUrl, editHeading, field) {
             $("#modelHeading").html(editHeading);
             $.each(field, function (index, value) {
                 $("#" + value).val(data[value]);
+                console.log(data)
             });
             if (data.role_id == 1 || data.role_id == 2) {
                 $('#role-dropdown').show();
@@ -113,7 +115,6 @@ function saveBtn(urlStore, table) {
                 if (data.errors) {
                     $("#info-error").html("");
                     $.each(data.errors, function (key, value) {
-                        console.log(value);
                         $("#info-error").show();
                         $("#info-error").append(
                             "<strong><li>" + value + "</li></strong>"

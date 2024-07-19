@@ -1,7 +1,7 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="ajaxModel" aria-labelledby="offcanvasEndLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="modelHeading"></h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="ajaxModel" aria-label="Close"></button>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body flex-grow-0">
         <form id="ajaxForm" name="ajaxForm" class="form-horizontal" enctype="multipart/form-data">

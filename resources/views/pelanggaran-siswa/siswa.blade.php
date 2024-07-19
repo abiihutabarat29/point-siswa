@@ -10,9 +10,10 @@
             <x-table>
                 <th style="width:5%">#</th>
                 <th class="text-center" style="width:10%">Foto</th>
+                <th style="width:10%">NISN</th>
                 <th>Name</th>
-                <th>Gender</th>
-                <th>Poin</th>
+                <th style="width:15%">Gender</th>
+                <th style="width:10%" class="text-center">Poin</th>
                 <th style="width:15%" class="text-center">Action</th>
             </x-table>
         </x-card>
@@ -52,6 +53,10 @@
                     {
                         data: "foto",
                         name: "foto",
+                    },
+                    {
+                        data: "nisn",
+                        name: "nisn",
                     },
                     {
                         data: "siswa",

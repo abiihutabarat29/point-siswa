@@ -15,11 +15,13 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('siswa_id');
             $table->unsignedBigInteger('pelanggaran_id');
+            $table->unsignedBigInteger('user_id');
+            $table->longText('keterangan')->nullable();
             $table->timestamps();
 
-
             $table->foreign('siswa_id')->references('id')->on('siswa')->onDelete('cascade');
-            $table->foreign('pelanggaran_id')->references('id')->on('pelanggaran')->onDelete('cascade');
+            $table->foreign('pelanggaran_id')->references('id')->on('pelanggaran');
+            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
         });
     }
 

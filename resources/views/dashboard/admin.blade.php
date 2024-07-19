@@ -11,7 +11,7 @@
                                         <h5 class="mb-2">Kelas/Rombel</h5>
                                     </div>
                                     <div class="mt-sm-auto">
-                                        <h4 class="mb-0">0</h4>
+                                        <h4 class="mb-0">{{ $rombel }}</h4>
                                     </div>
                                 </div>
                                 <img src="assets/img/kelas.png" height="100" />
@@ -28,7 +28,7 @@
                                         <h5 class="mb-2">Guru</h5>
                                     </div>
                                     <div class="mt-sm-auto">
-                                        <h4 class="mb-0">0</h4>
+                                        <h4 class="mb-0">{{ $guru }}</h4>
                                     </div>
                                 </div>
                                 <img src="assets/img/guru.png" height="100" />
@@ -45,7 +45,7 @@
                                         <h5 class="mb-2">Siswa</h5>
                                     </div>
                                     <div class="mt-sm-auto">
-                                        <h4 class="mb-0">0</h4>
+                                        <h4 class="mb-0">{{ $siswa }}</h4>
                                     </div>
                                 </div>
                                 <img src="assets/img/siswa.png" height="100" />
@@ -62,7 +62,7 @@
                                         <h5 class="mb-2">User</h5>
                                     </div>
                                     <div class="mt-sm-auto">
-                                        <h4 class="mb-0">0</h4>
+                                        <h4 class="mb-0">{{ $user }}</h4>
                                     </div>
                                 </div>
                                 <img src="assets/img/users.png" height="100" />

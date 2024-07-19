@@ -65,6 +65,7 @@ Route::middleware(['auth', 'role:1,2'])->group(function () {
         Route::resource('/guru', GuruController::class);
         Route::get('/guru/mapel/{id}', [GuruMapelController::class, 'index'])->name('guru.mapel');
     });
+
     Route::group(['middleware' => 'exists.jurusan'], function () {
         Route::resource('/mapel', MapelController::class);
         Route::post('mapel-import', [MapelController::class, 'import'])->name('mapel.import');
@@ -81,9 +82,12 @@ Route::middleware(['auth', 'role:1,2'])->group(function () {
             Route::resource('/rombel', RombelController::class);
         });
     });
+
     Route::get('/rombel/siswa/{id}', [RombelController::class, 'siswa'])->name('rombel.siswa');
     Route::get('/rombel/jadwal/{id}', [RombelController::class, 'jadwal'])->name('rombel.jadwal');
 
+    Route::resource('/pelanggaran', PelanggaranController::class);
+    Route::resource('/pelanggaran-siswa', PelanggaranSiswaController::class);
     Route::get('/pelanggaran-siswa/siswa/{id}', [PelanggaranSiswaController::class, 'siswa'])
         ->name('pelanggaran-siswa.siswa');
     Route::get('/pelanggaran-siswa/skors/{id}', [PelanggaranSiswaController::class, 'skors'])
@@ -99,10 +103,6 @@ Route::middleware(['auth', 'role:1,2'])->group(function () {
     Route::get('/absensi', [SiswaAbsensiController::class, 'index'])->name('absensi.index');
     Route::get('/absensi/presensi/{id}/{idm}', [SiswaAbsensiController::class, 'presensi'])->name('absensi.presensi');
     Route::post('absensi/scan', [SiswaAbsensiController::class, 'scanAbsensi'])->name('absensi.scan');
-
-
-    Route::resource('/pelanggaran', PelanggaranController::class);
-    Route::resource('/pelanggaran-siswa', PelanggaranSiswaController::class);
 });
 
 // Admin, Operator, Guru
@@ -112,9 +112,17 @@ Route::middleware(['auth'])->group(function () {
 
 //Guru
 Route::middleware(['auth', 'role:1,3'])->group(function () {
+
     Route::get('/absensi', [SiswaAbsensiController::class, 'index'])->name('absensi.index');
     Route::get('/absensi/presensi/{id}/{idm}', [SiswaAbsensiController::class, 'presensi'])->name('absensi.presensi');
     Route::post('absensi/scan', [SiswaAbsensiController::class, 'scanAbsensi'])->name('absensi.scan');
+
+    Route::get('/siswa/rombel/{id}', [SiswaRombelController::class, 'index'])->name('siswa.rombel');
+    Route::resource('/point-siswa', PelanggaranSiswaController::class);
+    Route::get('/point-pelanggaran-siswa', [PelanggaranSiswaController::class, 'pointSiswa'])
+        ->name('point-pelanggaran-siswa');
+    Route::post('/point-pelanggaran-siswa/store', [PelanggaranSiswaController::class, 'storePoint'])
+        ->name('point-pelanggaran-siswa.store');
 });
 
 // Siswa
