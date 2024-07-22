@@ -3,17 +3,17 @@
         <x-card menu="{{ $menu }}">
             <div class="dt-action-buttons text-end pt-3 pt-md-0">
                 <div class="dt-buttons">
-                    <x-button url="{{ route('pelanggaran-siswa.siswa', Crypt::encrypt($rombel->rombel->id)) }}"
-                        label="Kembali" icon="bx-reply"></x-button>
-                    <x-createBtn></x-createBtn>
-                    <x-exportBtn></x-exportBtn>
+                    <x-button url="{{ route('point-pelanggaran-siswa') }}" label="Kembali" icon="bx-reply"></x-button>
+                    {{-- <x-exportBtn></x-exportBtn> --}}
                 </div>
             </div>
             <x-table>
                 <th style="width:5%">#</th>
                 <th>Name</th>
                 <th style="width:20%" class="text-center">Pelanggaran</th>
-                <th style="width:15%" class="text-center">Poin</th>
+                <th style="width:10%" class="text-center">Poin</th>
+                <th style="width:10%" class="text-center">Status Verifikasi</th>
+                <th style="width:15%" class="text-center">Tanggal</th>
                 <th style="width:10%" class="text-center">Action</th>
             </x-table>
         </x-card>
@@ -28,6 +28,9 @@
             </x-dropdown>
         </x-offcanvas>
         <x-delete></x-delete>
+        <x-modalDetail>
+            <div id="detail"></div>
+        </x-modalDetail>
     @endsection
     @section('script')
         <script text="javascript">
@@ -38,10 +41,10 @@
                     },
                 });
 
-                var myTable = DataTable("{{ url('/pelanggaran-siswa/skors', $id) }}", [{
+                var myTable = DataTable("{{ route('point-pelanggaran-siswa.point', $id) }}", [{
                         "data": null,
-                        "orderable": false,
-                        "searchable": false,
+                        orderable: false,
+                        searchable: false,
                         "render": function(data, type, row, meta) {
                             return meta.row + meta.settings._iDisplayStart + 1;
                         }
@@ -49,14 +52,32 @@
                     {
                         data: "nama_siswa",
                         name: "nama_siswa",
+                        orderable: false,
+                        searchable: false,
                     },
                     {
                         data: "nama_pelanggaran",
                         name: "nama_pelanggaran",
+                        orderable: false,
+                        searchable: false,
                     },
                     {
                         data: "poin",
                         name: "poin",
+                        orderable: false,
+                        searchable: false,
+                    },
+                    {
+                        data: "status",
+                        name: "status",
+                        orderable: false,
+                        searchable: false,
+                    },
+                    {
+                        data: "tanggal",
+                        name: "tanggal",
+                        orderable: false,
+                        searchable: false,
                     },
                     {
                         data: "action",
@@ -67,23 +88,29 @@
                 ]);
 
                 // Create
-                var createHeading = "Tambah {{ $menu }}";
-                createModel(createHeading)
+                // var createHeading = "Tambah {{ $menu }}";
+                // createModel(createHeading)
 
                 // Edit
-                var editUrl = "{{ route('pelanggaran-siswa.index') }}";
-                var editHeading = "Edit {{ $menu }}";
-                var field = ['siswa_id', 'pelanggaran_id'];
-                editModel(editUrl, editHeading, field)
+                // var editUrl = "{{ route('pelanggaran-siswa.index') }}";
+                // var editHeading = "Edit {{ $menu }}";
+                // var field = ['siswa_id', 'pelanggaran_id'];
+                // editModel(editUrl, editHeading, field)
 
                 // Save
-                saveBtn("{{ route('pelanggaran-siswa.store-siswa') }}", myTable);
+                // saveBtn("{{ route('pelanggaran-siswa.store-siswa') }}", myTable);
 
                 // Delete
                 var fitur = "{{ $menu }}";
-                var editUrl = "{{ route('pelanggaran-siswa.index') }}";
-                var deleteUrl = "{{ route('pelanggaran-siswa.store') }}";
+                var editUrl = "{{ route('point-siswa.index') }}";
+                var deleteUrl = "{{ route('point-siswa.store') }}";
                 Delete(fitur, editUrl, deleteUrl, myTable)
+
+                // Detail Point
+                var urlDetail = "{{ route('point-siswa.index') }}";
+                var path = "{{ asset('storage/foto-pelanggaran') }}";
+                var detailHeading = "Detail Pelanggaran";
+                Detail(urlDetail, path, detailHeading)
             });
         </script>
     @endsection

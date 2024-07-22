@@ -20,12 +20,12 @@
     @endsection
     @section('modal')
         <x-offcanvas>
-            <x-dropdown name="siswa_id" label="Siswa">
+            <x-dropdown name="siswa_id" label="Siswa" opsi="true">
                 @foreach ($siswaRombel as $sis)
                     <option value="{{ $sis->siswa->id }}">{{ $sis->siswa->name }}</option>
                 @endforeach
             </x-dropdown>
-            <x-dropdown name="pelanggaran_id" label="Pelanggaran">
+            <x-dropdown name="pelanggaran_id" label="Pelanggaran" opsi="true">
                 @foreach ($pelanggaran as $pelang)
                     <option value="{{ $pelang->id }}">{{ $pelang->name }}</option>
                 @endforeach

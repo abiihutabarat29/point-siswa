@@ -3,13 +3,13 @@
         <x-card menu="{{ $menu }}">
             <div class="dt-action-buttons text-end pt-3 pt-md-0">
                 <div class="dt-buttons">
-                    <x-button url="{{ route('pelanggaran-siswa.index') }}" label="Kembali"></x-button>
                     <x-createBtn></x-createBtn>
                 </div>
             </div>
             <x-table>
                 <th style="width:5%">#</th>
                 <th class="text-center" style="width:10%">Foto</th>
+                <th style="width:10%">Rombel</th>
                 <th style="width:10%">NISN</th>
                 <th>Name</th>
                 <th style="width:20%">Gender</th>
@@ -19,20 +19,31 @@
         </x-card>
     @endsection
     @section('modal')
-        <x-offcanvas>
-            <x-dropdown name="rombel_id" label="Rombel">
+        <x-modal size="modal-lg">
+            <div class="alert alert-warning alert-dismissible">
+                <h5 class="alert-heading fw-bold"><i class="bx bxs-info-circle"></i> Perhatian!</h5>
+                <hr class="m-2">
+                <li>Inputan yang bertanda (<span class="text-danger"><b>*</b></span>) wajib diisi.</li>
+                <li>Inputan yang bertanda <small class="text-muted">(opsional)</small> tidak wajib diisi.</li>
+                <li>Foto yang diupload maksimal 5MB.</li>
+            </div>
+            <x-dropdown name="rombel_id" label="Rombel" opsi="true">
                 @foreach ($rombel as $item)
                     <option value="{{ $item->id }}">{{ $item->name }}</option>
                 @endforeach
             </x-dropdown>
-            <x-dropdown name="siswa_id" label="Siswa"></x-dropdown>
-            <x-dropdown name="pelanggaran_id" label="Pelanggaran">
+            <x-dropdown name="siswa_id" label="Siswa" opsi="true"></x-dropdown>
+            <x-dropdown name="pelanggaran_id" label="Pelanggaran" opsi="true">
                 @foreach ($pelanggaran as $p)
                     <option value="{{ $p->id }}">{{ $p->name }}</option>
                 @endforeach
             </x-dropdown>
-            <x-textarea name="keterangan" label="Keterangan" opsi="false"></x-textarea>
-        </x-offcanvas>
+            <div class="mb-3">
+                <img class="d-block rounded" id="preview" alt="Image" width="120">
+            </div>
+            <x-input type="file" name="foto" label="Foto" value="" opsi="false"></x-input>
+            <x-textarea name="keterangan" label="Catatan Keterangan" opsi="false"></x-textarea>
+        </x-modal>
         <x-delete></x-delete>
     @endsection
     @section('script')
@@ -55,6 +66,10 @@
                     {
                         data: "foto",
                         name: "foto",
+                    },
+                    {
+                        data: "rombel",
+                        name: "rombel",
                     },
                     {
                         data: "nisn",
@@ -85,7 +100,7 @@
                 createModel(createHeading)
 
                 // Save
-                saveBtn("{{ route('point-pelanggaran-siswa.store') }}", myTable);
+                saveImage("{{ route('point-pelanggaran-siswa.store') }}", myTable);
 
                 // Edit
                 var editUrl = "{{ route('point-siswa.index') }}";
@@ -131,6 +146,16 @@
                     } else {
                         $('select[name="siswa_id"]').empty();
                     }
+                });
+
+                // Preview Image
+                $("#foto").change(function() {
+                    var input = this;
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $("#preview").attr("src", e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
                 });
             });
         </script>

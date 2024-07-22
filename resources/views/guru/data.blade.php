@@ -30,7 +30,7 @@
                                             width="117" alt="">
                                     </div>
                                 @endif
-                                <div class="user-info text-center">
+                                <div class="user-info text-center mb-3">
                                     <h4 class="mb-2">{{ $guru->name }}</h4>
                                     <span class="badge bg-label-secondary">
                                         @if ($guru->jabatan_guru)
@@ -40,7 +40,8 @@
                                         @endif
                                     </span>
                                 </div>
-                                <x-input type="file" name="photo" label="Ganti Foto" value=""></x-input>
+                                <x-input type="file" name="photo" label="Ganti Foto" value=""
+                                    opsi="false"></x-input>
                             </div>
                         </div>
                     </x-card>

@@ -119,19 +119,19 @@
         <x-modal size="modal-lg">
             <div class="row g-2">
                 <div class="col mb-0">
-                    <x-input type="text" name="nip" label="NIP" value=""></x-input>
-                    <x-dropdown name="gender" label="Jenis Kelamin">
+                    <x-input type="text" name="nip" label="NIP" value="" opsi="true"></x-input>
+                    <x-dropdown name="gender" label="Jenis Kelamin" opsi="true">
                         <option value="L">Laki-Laki</option>
                         <option value="P">Perempuan</option>
                     </x-dropdown>
-                    <x-input type="text" name="tlp" label="No. HP" value=""></x-input>
-                    <x-image type="file" name="photo" label="Foto" value=""></x-image>
+                    <x-input type="text" name="tlp" label="No. HP" value="" opsi="true"></x-input>
+                    <x-image type="file" name="photo" label="Foto" value="" opsi="true"></x-image>
                 </div>
                 <div class="col mb-0">
-                    <x-input type="text" name="name" label="Nama" value=""></x-input>
-                    <x-input type="text" name="tmp_lahir" label="Tempat Lahir" value=""></x-input>
-                    <x-input type="date" name="tgl_lahir" label="Tanggal Lahir" value=""></x-input>
-                    <x-dropdown name="status" label="Status Guru">
+                    <x-input type="text" name="name" label="Nama" value="" opsi="true"></x-input>
+                    <x-input type="text" name="tmp_lahir" label="Tempat Lahir" value="" opsi="true"></x-input>
+                    <x-input type="date" name="tgl_lahir" label="Tanggal Lahir" value="" opsi="true"></x-input>
+                    <x-dropdown name="status" label="Status Guru" opsi="true">
                         <option value="PNS">PNS</option>
                         <option value="GTT">GTT</option>
                     </x-dropdown>
@@ -191,7 +191,6 @@
                         },
                     });
                 });
-
 
                 $("body").on("click", ".delete", function() {
                     const deleteId = $(this).data("id");
@@ -268,11 +267,11 @@
                                         "<strong><li>" + value + "</li></strong>"
                                     );
                                     $(".alert-danger").fadeOut(5000);
-                                    $("#saveFile").html("Simpan");
+                                    $("#saveFile").html("Import");
                                 });
                             } else {
                                 alertToastr(data.success);
-                                $("#saveFile").html("Simpan");
+                                $("#saveFile").html("Import");
                                 $("#modal-import").modal("hide");
                                 setTimeout(function() {
                                     location.reload();

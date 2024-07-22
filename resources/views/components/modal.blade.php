@@ -9,6 +9,7 @@
             <form id="ajaxForm" name="ajaxForm" class="form-horizontal" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="hidden_id" id="hidden_id">
+                <hr class="m-0 mt-2">
                 <div class="modal-body">
                     {{ $slot }}
                     <div id="info-error" class="alert alert-warning text-danger" role="alert" style="display: none;">

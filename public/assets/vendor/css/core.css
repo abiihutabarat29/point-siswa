@@ -6929,15 +6929,17 @@ label.btn {
 
 .btn-info {
   color: #fff;
-  background-color: #03c3ec;
-  border-color: #03c3ec;
-  box-shadow: 0 0.125rem 0.25rem 0 rgba(3, 195, 236, 0.4);
+  background: linear-gradient(45deg, #06a7cb, #7be2fa);
+  border: none;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(105, 108, 255, 0.4);
+  background-size: 200% 200%;
+  transition: background-position 0.5s ease;
 }
 .btn-info:hover {
-  color: #fff !important;
-  background-color: #03b0d4 !important;
-  border-color: #03b0d4 !important;
-  transform: translateY(-1px) !important;
+    color: #fff !important;
+    background-position: right center;
+    border: none !important;
+    transform: translateY(-1px) !important;
 }
 .btn-check:focus + .btn-info, .btn-info:focus, .btn-info.focus {
   color: #fff;

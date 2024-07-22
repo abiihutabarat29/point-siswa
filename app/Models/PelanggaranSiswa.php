@@ -12,11 +12,19 @@ class PelanggaranSiswa extends Model
     protected $table = 'pelanggaran_siswa';
 
     protected $fillable = [
+        'rombel_id',
         'siswa_id',
         'pelanggaran_id',
         'user_id',
+        'foto',
         'keterangan',
+        'status',
     ];
+
+    public function rombel()
+    {
+        return $this->belongsTo(Rombel::class, 'rombel_id');
+    }
 
     public function siswa()
     {

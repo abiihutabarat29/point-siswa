@@ -9,7 +9,7 @@
             <x-table>
                 <th style="width:5%">#</th>
                 <th>Nama</th>
-                <th>Action</th>
+                <th class="text-center" style="width:5%">Action</th>
             </x-table>
         </x-card>
     @endsection

@@ -20,7 +20,8 @@
                             </div>
                         </div>
                         <div class="col">
-                            <x-input type="file" name="file" label="Import File" value=""></x-input>
+                            <x-input type="file" name="file" label="Import File" value=""
+                                opsi="true"></x-input>
                         </div>
                     </div>
                     <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
@@ -31,7 +32,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" id="saveFile" value="create-import" class="btn btn-primary">Save</button>
+                    <button type="submit" id="saveFile" value="create-import" class="btn btn-primary">Import</button>
                 </div>
             </form>
         </div>

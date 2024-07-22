@@ -118,11 +118,15 @@ Route::middleware(['auth', 'role:1,3'])->group(function () {
     Route::post('absensi/scan', [SiswaAbsensiController::class, 'scanAbsensi'])->name('absensi.scan');
 
     Route::get('/siswa/rombel/{id}', [SiswaRombelController::class, 'index'])->name('siswa.rombel');
+
     Route::resource('/point-siswa', PelanggaranSiswaController::class);
+
     Route::get('/point-pelanggaran-siswa', [PelanggaranSiswaController::class, 'pointSiswa'])
         ->name('point-pelanggaran-siswa');
     Route::post('/point-pelanggaran-siswa/store', [PelanggaranSiswaController::class, 'storePoint'])
         ->name('point-pelanggaran-siswa.store');
+    Route::get('/point-pelanggaran-siswa/point/{id}', [PelanggaranSiswaController::class, 'point'])
+        ->name('point-pelanggaran-siswa.point');
 });
 
 // Siswa

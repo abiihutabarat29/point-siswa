@@ -14,8 +14,9 @@
         <x-card>
             <div class="row g-2">
                 <div class="col mb-0">
-                    <x-input type="text" name="name" label="Nama Kelas / Rombel" value=""></x-input>
-                    <x-dropdown name="jurusan_id" label="Jurusan">
+                    <x-input type="text" name="name" label="Nama Kelas / Rombel" value=""
+                        opsi="true"></x-input>
+                    <x-dropdown name="jurusan_id" label="Jurusan" opsi="true">
                         @foreach ($jurusan as $jur)
                             <option value="{{ $jur->id }}" @selected(old('jurusan_id') == $jur->id)>{{ $jur->name }}
                             </option>
@@ -23,7 +24,7 @@
                     </x-dropdown>
                 </div>
                 <div class="col mb-0">
-                    <x-dropdown name="kelas_id" label="Kelas">
+                    <x-dropdown name="kelas_id" label="Kelas" opsi="true">
                         @foreach ($kelas as $kel)
                             <option value="{{ $kel->id }}" @selected(old('kelas_id') == $kel->id)>{{ $kel->name }}
                             </option>
@@ -77,7 +78,7 @@
             </div>
             <div class="col-md-4 mb-0">
                 <x-card>
-                    <x-dropdown name="siswa_id" label="Ketua Kelas"></x-dropdown>
+                    <x-dropdown name="siswa_id" label="Ketua Kelas" opsi="true"></x-dropdown>
                 </x-card>
             </div>
         </div>

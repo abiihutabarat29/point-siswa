@@ -66,7 +66,9 @@ function createModel(createHeading) {
         $("#hidden_id").val("");
         $("#ajaxModel").offcanvas("show");
         $("#modal").modal("show");
-        $("#default").attr("src", "img/image-default.jpg");
+        $("#preview").attr("src", "img/blank.jpg");
+        $('#role-dropdown').show();
+        // $("#default").attr("src", "img/image-default.jpg");
     });
 }
 
@@ -83,7 +85,7 @@ function editModel(editUrl, editHeading, field) {
                 $("#" + value).val(data[value]);
                 console.log(data)
             });
-            if (data.role_id == 1 || data.role_id == 2) {
+            if (data.role_id == 1 || data.role_id == 2 || data.role_id == 3) {
                 $('#role-dropdown').show();
             } else {
                 $('#role-dropdown').hide();
@@ -179,6 +181,7 @@ function Delete(fitur, editUrl, deleteUrl, table) {
         const deleteId = $(this).data("id");
         $("#modelHeadingHps").html("Hapus");
         $("#fitur").html(fitur);
+        $("#ajaxForm").trigger("reset");
         $("#ajaxModelHps").modal("show");
         $.get(editUrl + "/" + deleteId + "/edit", function (data) {
             $("#field").html(data.name);
@@ -197,13 +200,13 @@ function Delete(fitur, editUrl, deleteUrl, table) {
                 },
                 success: function (data) {
                     if (data.errors) {
-                        $(".alert-danger").html("");
+                        $("#info-error").html("");
                         $.each(data.errors, function (key, value) {
-                            $(".alert-danger").show();
-                            $(".alert-danger").append(
+                            $("#info-error").show();
+                            $("#info-error").append(
                                 "<strong><li>" + value + "</li></strong>"
                             );
-                            $(".alert-danger").fadeOut(5000);
+                            $("#info-error").fadeOut(5000);
                             $("#hapusBtn").html(
                                 "<i class='fa fa-trash'></i>Hapus"
                             );
@@ -260,13 +263,13 @@ function saveFile(urlStore, table) {
             processData: false,
             success: function (data) {
                 if (data.errors) {
-                    $(".alert-danger").html("");
+                    $("#info-error").html("");
                     $.each(data.errors, function (key, value) {
-                        $(".alert-danger").show();
-                        $(".alert-danger").append(
+                        $("#info-error").show();
+                        $("#info-error").append(
                             "<strong><li>" + value + "</li></strong>"
                         );
-                        $(".alert-danger").fadeOut(5000);
+                        $("#info-error").fadeOut(5000);
                         $("#saveFile").html("Simpan");
                     });
                 } else {
@@ -279,6 +282,98 @@ function saveFile(urlStore, table) {
         });
     });
 }
+
+function Detail(url, path, heading) {
+    $("body").on("click", ".detail", function () {
+        var pointId = $(this).data("id");
+        var nama = $(this).data("nama");
+        $("#heading-detail").html(heading);
+        $("#ajaxModelDetail").modal("show");
+        $.ajax({
+            url: url + "/" + pointId,
+            type: "GET",
+            dataType: "json",
+            success: function (response) {
+                $("#detail").empty();
+                var detail = response.detail;
+                console.log(detail);
+                if (detail) {
+                    var imageSrc = detail.foto
+                        ? path + "/" + detail.foto
+                        : "/img/blank.jpg";
+
+                    var statusBadge;
+                    if (detail.status == 1) {
+                        statusBadge = '<span class="badge bg-label-success me-1">Terkonfirmasi</span>';
+                    } else if (detail.status == 0) {
+                        statusBadge = '<span class="badge bg-label-warning me-1">Pending</span>';
+                    } else {
+                        statusBadge = '<span class="badge bg-label-danger me-1">Ditolak</span>';
+                    }
+
+                    var gender = detail.siswa.gender == 'L'
+                        ? 'Laki-laki'
+                        : 'Perempuan';
+
+                    var tanggal = new Date(detail.created_at);
+                    var options = { day: 'numeric', month: 'long', year: 'numeric' };
+                    var formattedDate = tanggal.toLocaleDateString('id-ID', options);
+
+                    var keteranganContent = detail.keterangan
+                        ? detail.keterangan
+                        : "<small class='text-danger'>Tidak ada catatan.</small>";
+
+                    var alasanContent = detail.status == 3
+                        ? "<hr><h6 class='card-title mb-3'>Alasan Penolakan :</h6>" +
+                        "<dd><i class='bx bx-user-voice'></i> : " + (detail.alasan ? detail.alasan : "Tidak ada alasan.") + "</dd>"
+                        : "";
+
+                    $("#detail").append(
+                        "<div class='col-md-12'>" +
+                        "<div class='row'>" +
+                        "<div class='col-md-4 mb-4'>" +
+                        "<div class='cardhg'>" +
+                        "<img class='card-img card border border-primary' src='" +
+                        imageSrc +
+                        "' alt='Foto Pelanggaran' />" +
+                        "</div>" +
+                        "</div>" +
+                        "<div class='col-md-8 mb-2'>" +
+                        "<dl class='row'>" +
+                        "<dt class='col-sm-4'>Status Verifikasi</dt>" +
+                        "<dd class='col-sm-8'>: " + statusBadge + "</dd>" +
+                        "<dt class='col-sm-4'>NISN</dt>" +
+                        "<dd class='col-sm-8'>: " + detail.siswa.nisn + "</dd>" +
+                        "<dt class='col-sm-4'>Nama</dt>" +
+                        "<dd class='col-sm-8'>: " + detail.siswa.name + "</dd>" +
+                        "<dt class='col-sm-4'>Jenis Kelamin</dt>" +
+                        "<dd class='col-sm-8'>: " + gender + "</dd>" +
+                        "<dt class='col-sm-4'>Rombel</dt>" +
+                        "<dd class='col-sm-8'>: " + detail.rombel.name + "</dd>" +
+                        "<dt class='col-sm-4'>Pelanggaran</dt>" +
+                        "<dd class='col-sm-8'>: " + detail.pelanggaran.name + "</dd>" +
+                        "<dt class='col-sm-4'>Tanggal</dt>" +
+                        "<dd class='col-sm-8'>: " + formattedDate + "</dd>" +
+                        "<dt class='col-sm-4'>Catatan Keterangan</dt>" +
+                        "<dd class='col-sm-12'>" + keteranganContent + "</dd>" +
+                        "</dl>" +
+                        alasanContent +
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
+                        "<hr>"
+                    );
+                } else {
+                    $("#detail").append("<p>Tidak ada data detail.</p>");
+                }
+            },
+            error: function (error) {
+                console.error("Error:", error);
+            },
+        });
+    });
+}
+
 
 function Scan(urlScan, table) {
 

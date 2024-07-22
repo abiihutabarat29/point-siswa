@@ -9,11 +9,7 @@
                 !request()->routeIs('guru.jabatan') &&
                 !request()->routeIs('guru.show') &&
                 !request()->routeIs('tapel.index'))
-            @if (request()->routeIs('pelanggaran-siswa.skors'))
-                <span class="badge bg-primary">{{ $menu }}</span>
-            @else
-                <h5 class="card-title mb-2">{{ $menu }}</h5>
-            @endif
+            <h5 class="card-title mb-2">{{ $menu }}</h5>
         @endif
         {{ $slot }}
     </div>

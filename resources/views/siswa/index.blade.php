@@ -24,22 +24,22 @@
         <x-modal size="modal-lg">
             <div class="row g-2">
                 <div class="col mb-0">
-                    <x-input type="text" name="nisn" label="NISN" value=""></x-input>
-                    <x-dropdown name="gender" label="Jenis Kelamin">
+                    <x-input type="text" name="nisn" label="NISN" value="" opsi="true"></x-input>
+                    <x-dropdown name="gender" label="Jenis Kelamin" opsi="true">
                         <option value="L">Laki-Laki</option>
                         <option value="P">Perempuan</option>
                     </x-dropdown>
-                    <x-dropdown name="pendaftaran" label="Pendaftaran">
+                    <x-dropdown name="pendaftaran" label="Pendaftaran" opsi="true">
                         <option value="Siswa Baru">Siswa Baru</option>
                         <option value="Pindahan">Pindahan</option>
                     </x-dropdown>
-                    <x-input type="date" name="tgl_masuk" label="Tanggal Masuk" value=""></x-input>
+                    <x-input type="date" name="tgl_masuk" label="Tanggal Masuk" value="" opsi="true"></x-input>
                 </div>
                 <div class="col mb-0">
-                    <x-input type="text" name="name" label="Nama" value=""></x-input>
-                    <x-input type="text" name="tmp_lahir" label="Tempat Lahir" value=""></x-input>
-                    <x-input type="date" name="tgl_lahir" label="Tanggal Lahir" value=""></x-input>
-                    <x-image type="file" name="foto" label="Foto" value=""></x-image>
+                    <x-input type="text" name="name" label="Nama" value="" opsi="true"></x-input>
+                    <x-input type="text" name="tmp_lahir" label="Tempat Lahir" value="" opsi="true"></x-input>
+                    <x-input type="date" name="tgl_lahir" label="Tanggal Lahir" value="" opsi="true"></x-input>
+                    <x-image type="file" name="foto" label="Foto" value="" opsi="true"></x-image>
                 </div>
             </div>
         </x-modal>

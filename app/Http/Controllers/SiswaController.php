@@ -81,12 +81,13 @@ class SiswaController extends Controller
             'nisn.required'         => 'NISN harus diisi.',
             'name.required'         => 'Nama harus diisi.',
             'gender.required'       => 'Jenis Kelamin harus dipilih.',
+            'pendaftaran.required'  => 'Jenis Pendaftaran harus dipilih.',
             'tmp_lahir.required'    => 'Tempat Lahir harus diisi.',
             'tgl_lahir.required'    => 'Tanggal Lahir harus diisi.',
-            'foto.required'        => 'Foto harus diupload.',
-            'foto.*.mimes'         => 'Tipe foto yang diunggah harus jpg, jpeg atau png.',
-            'foto.*.max'           => 'Ukuran foto tidak boleh lebih dari 8 MB.',
-            'pendaftaran.required'     => 'Jenis Pendaftaran harus dipilih.',
+            'foto.required'         => 'Foto harus diupload.',
+            'foto.*.mimes'          => 'Tipe foto yang diunggah harus jpg, jpeg atau png.',
+            'foto.*.max'            => 'Ukuran foto tidak boleh lebih dari 8 MB.',
+            'pendaftaran.required'  => 'Jenis Pendaftaran harus dipilih.',
         );
 
         if ($request->hidden_id) {
@@ -99,6 +100,7 @@ class SiswaController extends Controller
             'nisn'      => 'required',
             'name'      => 'required',
             'gender'    => 'required',
+            'pendaftaran'    => 'required',
             'tmp_lahir' => 'required',
             'tgl_lahir' => 'required',
             'foto'      => $ruleFoto,
@@ -129,14 +131,14 @@ class SiswaController extends Controller
                 'id' => $request->hidden_id
             ],
             [
-                'nisn'      => $request->nisn,
-                'name'      => $request->name,
-                'gender'    => $request->gender,
-                'tmp_lahir' => $request->tmp_lahir,
-                'tgl_lahir' => $request->tgl_lahir,
-                'foto'      => $fileFoto,
+                'nisn'        => $request->nisn,
+                'name'        => $request->name,
+                'gender'      => $request->gender,
+                'tmp_lahir'   => $request->tmp_lahir,
+                'tgl_lahir'   => $request->tgl_lahir,
+                'foto'        => $fileFoto,
                 'pendaftaran' => $request->pendaftaran,
-                'tgl_masuk' => $request->tgl_masuk,
+                'tgl_masuk'   => $request->tgl_masuk,
             ]
         );
 
