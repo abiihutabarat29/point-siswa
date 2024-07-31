@@ -43,7 +43,6 @@ class GuruController extends Controller
     public function store(Request $request)
     {
         $message = array(
-            'kode.required'         => 'Kode guru harus diisi.',
             'name.required'         => 'Nama harus diisi.',
             'nip.required'          => 'NIP harus diisi.',
             'status.required'       => 'Status guru harus diisi.',
@@ -79,7 +78,11 @@ class GuruController extends Controller
         ], $message);
 
         if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()->all()]);
+            if ($request->ajax()) {
+                return response()->json(['errors' => $validator->errors()->all()]);
+            } else {
+                return back()->withErrors($validator)->withInput();
+            }
         }
 
         if ($request->hasFile('photo')) {

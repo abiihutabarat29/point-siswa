@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Crypt;
 use \Yajra\Datatables\Datatables;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class SiswaController extends Controller
 {
@@ -46,9 +45,6 @@ class SiswaController extends Controller
                 })
                 ->addColumn('tgl_lahir', function ($data) {
                     return Carbon::parse($data->tgl_lahir)->isoFormat('D MMMM Y');
-                })
-                ->addColumn('qr', function ($data) {
-                    return QrCode::generate($data->nisn);
                 })
                 ->addColumn('action', function ($row) {
                     return '<div class="dropdown">

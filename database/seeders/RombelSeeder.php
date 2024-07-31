@@ -34,6 +34,15 @@ class RombelSeeder extends Seeder
             [
                 "tapel_id" => 3,
                 "semester_id" => 1,
+                "name" => "X TKR 3",
+                "jurusan_id" => 2,
+                "kelas_id" => 1,
+                "guru_id" => null,
+                "siswa_id" => null,
+            ],
+            [
+                "tapel_id" => 3,
+                "semester_id" => 1,
                 "name" => "X TSM",
                 "jurusan_id" => 3,
                 "kelas_id" => 1,
@@ -88,15 +97,6 @@ class RombelSeeder extends Seeder
             [
                 "tapel_id" => 3,
                 "semester_id" => 1,
-                "name" => "X TKJ 3",
-                "jurusan_id" => 5,
-                "kelas_id" => 1,
-                "guru_id" => null,
-                "siswa_id" => null,
-            ],
-            [
-                "tapel_id" => 3,
-                "semester_id" => 1,
                 "name" => "X RPL 1",
                 "jurusan_id" => 6,
                 "kelas_id" => 1,
@@ -124,7 +124,7 @@ class RombelSeeder extends Seeder
             [
                 "tapel_id" => 3,
                 "semester_id" => 1,
-                "name" => "XI TKRO 1",
+                "name" => "XI TKR 1",
                 "jurusan_id" => 7,
                 "kelas_id" => 2,
                 "guru_id" => null,
@@ -133,7 +133,7 @@ class RombelSeeder extends Seeder
             [
                 "tapel_id" => 3,
                 "semester_id" => 1,
-                "name" => "XI TKRO 2",
+                "name" => "XI TKR 2",
                 "jurusan_id" => 7,
                 "kelas_id" => 2,
                 "guru_id" => null,
@@ -196,6 +196,15 @@ class RombelSeeder extends Seeder
             [
                 "tapel_id" => 3,
                 "semester_id" => 1,
+                "name" => "XI TKJ 3",
+                "jurusan_id" => 5,
+                "kelas_id" => 2,
+                "guru_id" => null,
+                "siswa_id" => null,
+            ],
+            [
+                "tapel_id" => 3,
+                "semester_id" => 1,
                 "name" => "XI RPL 1",
                 "jurusan_id" => 6,
                 "kelas_id" => 2,
@@ -214,7 +223,16 @@ class RombelSeeder extends Seeder
             [
                 "tapel_id" => 3,
                 "semester_id" => 1,
-                "name" => "XII TKRO 1",
+                "name" => "XI RPL 3",
+                "jurusan_id" => 6,
+                "kelas_id" => 2,
+                "guru_id" => null,
+                "siswa_id" => null,
+            ],
+            [
+                "tapel_id" => 3,
+                "semester_id" => 1,
+                "name" => "XII TKR 1",
                 "jurusan_id" => 7,
                 "kelas_id" => 3,
                 "guru_id" => null,
@@ -223,7 +241,7 @@ class RombelSeeder extends Seeder
             [
                 "tapel_id" => 3,
                 "semester_id" => 1,
-                "name" => "XII TKRO 2",
+                "name" => "XII TKR 2",
                 "jurusan_id" => 7,
                 "kelas_id" => 3,
                 "guru_id" => null,
@@ -286,15 +304,6 @@ class RombelSeeder extends Seeder
             [
                 "tapel_id" => 3,
                 "semester_id" => 1,
-                "name" => "XII TKJ 3",
-                "jurusan_id" => 5,
-                "kelas_id" => 3,
-                "guru_id" => null,
-                "siswa_id" => null,
-            ],
-            [
-                "tapel_id" => 3,
-                "semester_id" => 1,
                 "name" => "XII RPL 1",
                 "jurusan_id" => 6,
                 "kelas_id" => 3,
@@ -310,15 +319,6 @@ class RombelSeeder extends Seeder
                 "guru_id" => null,
                 "siswa_id" => null,
             ],
-            [
-                "tapel_id" => 3,
-                "semester_id" => 1,
-                "name" => "XII RPL 3",
-                "jurusan_id" => 6,
-                "kelas_id" => 3,
-                "guru_id" => null,
-                "siswa_id" => null,
-            ]
         ];
         Rombel::insert($data);
     }

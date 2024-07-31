@@ -6,11 +6,17 @@
                     <div class="card-body">
                         <div class="d-flex align-items-start align-items-sm-center gap-4">
                             @if (Auth::user()->guru->photo)
-                                <img src="{{ url('storage/siswa/' . Auth::user()->guru->photo) }}" alt="user-photo"
-                                    class="d-block rounded" height="100" width="100">
+                                <div class="image-container">
+                                    <img src="{{ url('storage/guru/' . Auth::user()->guru->photo) }}" alt="user-photo"
+                                        class="rounded-circle shadow" height="120" width="120">
+                                    <i class="bx bxs-badge-check icon-overlay icon-check"></i>
+                                </div>
                             @else
-                                <img src="{{ url('img/blank.jpg') }}" alt="user-photo" class="rounded-circle" height="100"
-                                    width="100">
+                                <div class="image-container">
+                                    <img src="{{ url('img/blank.jpg') }}" alt="user-photo" class="rounded-circle"
+                                        height="120" width="120">
+                                    <i class="bx bxs-x-circle icon-overlay icon-cross"></i>
+                                </div>
                             @endif
                             <div class="button-wrapper">
                                 <h5 class="card-title">
@@ -20,8 +26,7 @@
                                         "-"
                                     @endif
                                 </h5>
-                                <h5 class="card-title"> {{ Auth::user()->name }} <i
-                                        class="bx bxs-badge-check text-primary mb-2"></i>
+                                <h5 class="card-title"> {{ Auth::user()->name }}
                                     <br>
                                     <span class="badge bg-label-success mt-2">
                                         @if (auth()->user()->role_id == 3)

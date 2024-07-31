@@ -101,7 +101,6 @@
                                     icon="bx-phone"></x-inputHorizontal>
                                 <x-inputHorizontal name="tmp_lahir" value="{{ $guru->tmp_lahir }}" label="Tempat Lahir"
                                     icon="bx-map"></x-inputHorizontal>
-
                                 <x-inputHorizontal name="address" value="{{ $guru->address }}" label="Alamat"
                                     icon="bx-map"></x-inputHorizontal>
                                 <x-dropdownHorizontal name="agama" value="{{ $guru->agama }}" label="Agama"

@@ -22,7 +22,7 @@
             <x-input type="password" name="password" label="Password" value="" opsi="true"></x-input>
             <x-input type="password" name="repassword" label="Re-Password" value="" opsi="true"></x-input>
             <div id="role-dropdown">
-                <x-dropdown name="role_id" label="Role" opsi="true">
+                <x-dropdownOffcanvas name="role_id" label="Role" opsi="true">
                     <option value="1">Admin</option>
                     <option value="2">Operator</option>
                     <option value="3">Guru</option>
@@ -30,7 +30,7 @@
                     <option value="5">Kepala Sekolah</option>
                     <option value="6">Siswa</option>
                     <option value="7">Orang Tua</option>
-                </x-dropdown>
+                </x-dropdownOffcanvas>
             </div>
         </x-offcanvas>
         <x-delete></x-delete>

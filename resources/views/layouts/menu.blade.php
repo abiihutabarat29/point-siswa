@@ -50,14 +50,16 @@
                         label="Manajemen User"></x-menuDropdown>
                 </ul>
             </li>
+        @endif
+        @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2 || auth()->user()->role_id == 5)
             <x-menu route="{{ route('pelanggaran-siswa.index') }}" name="pelanggaran-siswa" label="Point Siswa"
                 icon="bx-detail"></x-menu>
-            <x-menu route="#" name="aktivitas-guru" label="Aktivitas Guru" icon="bx-calendar-check"></x-menu>
+            {{-- <x-menu route="#" name="aktivitas-guru" label="Aktivitas Guru" icon="bx-calendar-check"></x-menu> --}}
         @endif
         @if (auth()->user()->role_id == 3 || auth()->user()->role_id == 4)
             <x-menu route="{{ route('point-pelanggaran-siswa') }}" name="point-pelanggaran-siswa"
                 label="Pelanggaran Siswa" icon="bx-detail"></x-menu>
-            <x-menu route="#" name="aktivitas-guru" label="Aktivitas Guru" icon="bx-calendar-check"></x-menu>
+            {{-- <x-menu route="#" name="aktivitas-guru" label="Aktivitas Guru" icon="bx-calendar-check"></x-menu> --}}
         @endif
     </ul>
 </aside>

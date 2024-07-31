@@ -100,12 +100,25 @@ class PelanggaranSiswaController extends Controller
                     return $gender;
                 })
                 ->addColumn('poin', function ($data) {
-                    return '<center>' . PelanggaranSiswa::where('siswa_id', $data->siswa_id)
+                    $totalPoin = PelanggaranSiswa::where('siswa_id', $data->siswa_id)
                         ->with('pelanggaran')
                         ->get()
                         ->sum(function ($pelanggaranSiswa) {
                             return $pelanggaranSiswa->pelanggaran->bobot;
-                        }) . '</center>';
+                        });
+
+                    $colorClass = '';
+                    if ($totalPoin >= 0 && $totalPoin <= 29) {
+                        $colorClass = 'success';
+                    } elseif ($totalPoin >= 30 && $totalPoin <= 59) {
+                        $colorClass = 'primary';
+                    } elseif ($totalPoin >= 60 && $totalPoin <= 89) {
+                        $colorClass = 'warning';
+                    } elseif ($totalPoin >= 90) {
+                        $colorClass = 'danger';
+                    }
+
+                    return '<center><span class="badge bg-label-' . $colorClass . '">' . $totalPoin . '</span></center>';
                 })
                 ->addColumn('action', function ($row) {
                     return '
@@ -242,7 +255,7 @@ class PelanggaranSiswaController extends Controller
         $data = PelanggaranSiswa::find($id);
 
         if ($data->foto) {
-            Storage::delete('public/foto-pelanggaran/' . $data->foto);
+            Storage::delete('public/pelanggaran/' . $data->foto);
         }
         $data->delete();
         return response()->json(['success' => 'Skors deleted successfully.']);
@@ -436,12 +449,12 @@ class PelanggaranSiswaController extends Controller
 
         if ($request->hasFile('foto')) {
             $foto = $request->file('foto');
-            $fileFoto = 'FOTO-PELANGGARAN-' . time() . '.' . $foto->getClientOriginalExtension();
-            $foto->storeAs('public/foto-pelanggaran', $fileFoto);
+            $fileFoto = 'pelanggaran-' . time() . '.' . $foto->getClientOriginalExtension();
+            $foto->storeAs('public/pelanggaran', $fileFoto);
 
             if ($request->hidden_id) {
                 $oldFoto = PelanggaranSiswa::find($request->hidden_id);
-                Storage::delete('public/foto-pelanggaran/' . $oldFoto->foto);
+                Storage::delete('public/pelanggaran/' . $oldFoto->foto);
             }
         } elseif ($request->hidden_id) {
             $oldFoto = PelanggaranSiswa::find($request->hidden_id);

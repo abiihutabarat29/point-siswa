@@ -5,8 +5,13 @@
                 <div class="dt-buttons">
                     <x-button url="{{ route('pelanggaran-siswa.siswa', Crypt::encrypt($rombel->rombel->id)) }}"
                         label="Kembali" icon="bx-reply"></x-button>
-                    <x-createBtn></x-createBtn>
-                    <x-exportBtn></x-exportBtn>
+                    @if (auth()->user()->role_id == 1 ||
+                            auth()->user()->role_id == 2 ||
+                            auth()->user()->role_id == 3 ||
+                            auth()->user()->role_id == 4)
+                        <x-createBtn></x-createBtn>
+                        <x-exportBtn></x-exportBtn>
+                    @endif
                 </div>
             </div>
             <x-table>

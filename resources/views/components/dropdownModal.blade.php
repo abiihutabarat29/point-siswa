@@ -7,7 +7,7 @@
     @else
         <span class="text-danger">*</span>
     @endif
-    <select id="{{ $name }}" name="{{ $name }}" class="form-control select2" style="width: 100%;">
+    <select id="{{ $name }}" name="{{ $name }}" class="form-control select2Modal" style="width: 100%;">
         <option selected disabled>::Pilih {{ $label }}::</option>
         {{ $slot }}
     </select>

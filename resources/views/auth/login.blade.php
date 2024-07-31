@@ -27,19 +27,17 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/css/theme-default.css') }}"
         class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/css/pages/page-auth.css') }}" />
     <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
     <script src="{{ asset('assets/js/config.js') }}"></script>
+
 </head>
 
 <body>
     <!-- Content -->
-
     <div class="container-xxl">
         <div class="authentication-wrapper authentication-basic container-p-y">
             <div class="authentication-inner">
-                <!-- Register -->
                 <div class="card">
                     <div class="card-body">
                         <!-- Logo -->
@@ -52,7 +50,7 @@
                         </div>
                         <hr>
                         <!-- /Logo -->
-                        <p class="mb-4" id="typing-text"></p>
+                        <p class="mb-3" id="typing-text"></p>
                         <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="mb-3">
@@ -86,7 +84,6 @@
                     style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
                     <small>Copyright ©2024 SMK Negeri 1 Air Putih. All rights reserved.</small>
                     <br>
-                    <br>
                     <small>Versi 1.0.0</small>
                 </footer>
             </div>
@@ -94,10 +91,7 @@
     </div>
 
     <script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
-    <script src="{{ asset('assets/vendor/libs/popper/popper.js') }}"></script>
     <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
-    <script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
-    <script src="{{ asset('assets/vendor/js/menu.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -127,6 +121,26 @@
             }
 
             type();
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const emailInput = document.getElementById("email");
+            const passwordInput = document.getElementById("password");
+            const submitButton = document.querySelector("button[type='submit']");
+
+            function checkFormValidity() {
+                const emailValue = emailInput.value.trim();
+                const passwordValue = passwordInput.value.trim();
+                // Aktifkan tombol jika kedua input diisi, nonaktifkan sebaliknya
+                submitButton.disabled = !(emailValue && passwordValue);
+            }
+
+            // Periksa validitas form saat ada perubahan di input
+            emailInput.addEventListener("input", checkFormValidity);
+            passwordInput.addEventListener("input", checkFormValidity);
+
+            // Inisialisasi dengan memeriksa form saat pertama kali dimuat
+            checkFormValidity();
         });
     </script>
 </body>

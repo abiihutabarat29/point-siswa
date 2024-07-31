@@ -14,7 +14,6 @@
                 <th>Name</th>
                 <th>Gender</th>
                 <th>Tgl Lahir</th>
-                <th>QR</th>
                 <th class="text-center" style="width:5%">Action</th>
             </x-table>
         </x-card>
@@ -80,10 +79,6 @@
                     {
                         data: "tgl_lahir",
                         name: "tgl_lahir",
-                    },
-                    {
-                        data: "qr",
-                        name: "qr",
                     },
                     {
                         data: "action",

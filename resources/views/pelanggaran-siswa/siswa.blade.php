@@ -4,7 +4,12 @@
             <div class="dt-action-buttons text-end pt-3 pt-md-0">
                 <div class="dt-buttons">
                     <x-button url="{{ route('pelanggaran-siswa.index') }}" label="Kembali"></x-button>
-                    <x-createBtn></x-createBtn>
+                    @if (auth()->user()->role_id == 1 ||
+                            auth()->user()->role_id == 2 ||
+                            auth()->user()->role_id == 3 ||
+                            auth()->user()->role_id == 4)
+                        <x-createBtn></x-createBtn>
+                    @endif
                 </div>
             </div>
             <x-table>

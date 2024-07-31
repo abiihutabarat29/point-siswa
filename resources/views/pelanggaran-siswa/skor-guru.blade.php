@@ -24,12 +24,13 @@
     @endsection
     @section('modal')
         <x-modal size="modal-lg">
-            <div class="alert alert-warning alert-dismissible">
+            <div class="alert alert-warning alert-dismissible" role="alert">
                 <h5 class="alert-heading fw-bold"><i class="bx bxs-info-circle"></i> Perhatian!</h5>
                 <hr class="m-2">
                 <li>Inputan yang bertanda (<span class="text-danger"><b>*</b></span>) wajib diisi.</li>
                 <li>Inputan yang bertanda <small class="text-muted">(opsional)</small> tidak wajib diisi.</li>
                 <li>Foto yang diupload maksimal 5MB.</li>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <x-dropdown name="rombel_id" label="Rombel" opsi="true">
                 @foreach ($rombel as $item)
@@ -96,7 +97,7 @@
                 ]);
 
                 // Create
-                var createHeading = "Tambah {{ $menu }}";
+                var createHeading = "Isi Pelanggaran";
                 createModel(createHeading)
 
                 // Save
@@ -119,7 +120,7 @@
                     var rombel_id = $(this).val();
                     if (rombel_id) {
                         $.ajax({
-                            url: "{{ route('siswa.rombel', '') }}/" + rombel_id,
+                            url: "{{ route('get-siswa.rombel', '') }}/" + rombel_id,
                             type: "GET",
                             success: function(data) {
                                 $('select[name="siswa_id"]').empty();

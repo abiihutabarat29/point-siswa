@@ -596,3 +596,17 @@ function set(e) {
     return e;
 }
 
+$('.select2').select2({
+    theme: 'bootstrap4',
+})
+
+$('.select2Modal').select2({
+    theme: 'bootstrap4',
+    dropdownParent: $('#modal')
+})
+
+$('.select2Offcanvas').select2({
+    theme: 'bootstrap4',
+    dropdownParent: $('#ajaxModel')
+})
+

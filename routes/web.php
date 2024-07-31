@@ -34,7 +34,7 @@ Route::middleware(['auth', 'role:1'])->group(function () {
 });
 
 // Admin & Operator
-Route::middleware(['auth', 'role:1,2'])->group(function () {
+Route::middleware(['auth', 'role:1,2,5'])->group(function () {
     Route::get('/siswa/{kelas_id}', [SiswaController::class, 'get']);
     Route::get('/siswa/rombel/{id}', [SiswaRombelController::class, 'index'])->name('siswa.rombel');
     Route::get('/tapel/status/{id}', [TapelController::class, 'status'])->name('tapel.status');
@@ -92,7 +92,7 @@ Route::middleware(['auth'])->group(function () {
 //Guru dan Guru BK
 Route::middleware(['auth', 'role:3,4'])->group(function () {
 
-    Route::get('/siswa/rombel/{id}', [SiswaRombelController::class, 'index'])->name('siswa.rombel');
+    Route::get('/get-siswa/rombel/{id}', [SiswaRombelController::class, 'index'])->name('get-siswa.rombel');
 
     Route::resource('/point-siswa', PelanggaranSiswaController::class);
 

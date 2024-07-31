@@ -106,6 +106,37 @@ hr {
   opacity: 1;
 }
 
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    display: block;
+    border: 5px solid #fff; /* Ganti warna dan ukuran stroke sesuai kebutuhan */
+    border-radius: 50%; /* Membuat stroke mengikuti bentuk rounded-circle */
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1); /* Efek shadow opsional */
+}
+
+.icon-overlay {
+    position: absolute;
+    bottom: 0; /* Posisi di bagian bawah */
+    left: 50%;
+    transform: translate(-50%, 50%); /* Menempatkan ikon di tengah secara horizontal dan sedikit di bawah gambar */
+    font-size: 24px; /* Ukuran ikon */
+    background-color: #fff; /* Background untuk ikon */
+    border-radius: 50%; /* Membuat ikon berbentuk bulat */
+    padding: 1px; /* Menambahkan padding pada ikon */
+}
+
+.icon-check {
+    color: #007bff; /* Warna ikon centang */
+}
+
+.icon-cross {
+    color: #ff0000; /* Warna ikon silang */
+}
+
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 1rem;
