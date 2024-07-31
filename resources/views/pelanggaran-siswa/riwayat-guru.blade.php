@@ -11,9 +11,8 @@
                 <th style="width:5%">#</th>
                 <th>Name</th>
                 <th style="width:20%" class="text-center">Pelanggaran</th>
-                <th style="width:10%" class="text-center">Poin</th>
+                <th style="width:20%">Pelapor</th>
                 <th style="width:10%" class="text-center">Status Verifikasi</th>
-                <th style="width:15%" class="text-center">Tanggal</th>
                 <th style="width:10%" class="text-center">Action</th>
             </x-table>
         </x-card>
@@ -41,7 +40,7 @@
                     },
                 });
 
-                var myTable = DataTable("{{ route('point-pelanggaran-siswa.point', $id) }}", [{
+                var myTable = DataTable("{{ route('point-pelanggaran-siswa.riwayat', $id) }}", [{
                         "data": null,
                         orderable: false,
                         searchable: false,
@@ -62,20 +61,14 @@
                         searchable: false,
                     },
                     {
-                        data: "poin",
-                        name: "poin",
+                        data: "pelapor",
+                        name: "pelapor",
                         orderable: false,
                         searchable: false,
                     },
                     {
                         data: "status",
                         name: "status",
-                        orderable: false,
-                        searchable: false,
-                    },
-                    {
-                        data: "tanggal",
-                        name: "tanggal",
                         orderable: false,
                         searchable: false,
                     },
@@ -101,10 +94,10 @@
                 // saveBtn("{{ route('pelanggaran-siswa.store-siswa') }}", myTable);
 
                 // Delete
-                var fitur = "{{ $menu }}";
-                var editUrl = "{{ route('point-siswa.index') }}";
-                var deleteUrl = "{{ route('point-siswa.store') }}";
-                Delete(fitur, editUrl, deleteUrl, myTable)
+                // var fitur = "{{ $menu }}";
+                // var editUrl = "{{ route('point-siswa.index') }}";
+                // var deleteUrl = "{{ route('point-siswa.store') }}";
+                // Delete(fitur, editUrl, deleteUrl, myTable)
 
                 // Detail Point
                 var urlDetail = "{{ route('point-siswa.index') }}";

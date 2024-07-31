@@ -48,8 +48,14 @@
                                             Operator
                                         @elseif (auth()->user()->role_id == 3)
                                             Guru
-                                        @else
-                                            Siswa / Siswi
+                                        @elseif (auth()->user()->role_id == 4)
+                                            Bimbingan Konseling (BK)
+                                        @elseif (auth()->user()->role_id == 5)
+                                            Kepala Sekolah
+                                        @elseif (auth()->user()->role_id == 6)
+                                            Siswa
+                                        @elseif (auth()->user()->role_id == 7)
+                                            Orang Tua
                                         @endif
                                     </small>
                                 </div>
@@ -62,7 +68,7 @@
                     <li>
                         <a class="dropdown-item" href="#">
                             <i class="bx bx-user me-2"></i>
-                            <span class="align-middle">My Profile</span>
+                            <span class="align-middle">Profile</span>
                         </a>
                     </li>
                     <li>

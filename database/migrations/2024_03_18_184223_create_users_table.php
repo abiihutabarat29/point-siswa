@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('guru_id')->nullable();
             $table->unsignedBigInteger('siswa_id')->nullable();
-            $table->string('id_card');
             $table->string('name');
             $table->string('email')->unique()->nullable();
             $table->string('password')->nullable();

@@ -7,6 +7,7 @@
                 <h5 class="modal-title" id="importHeading"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <hr>
             <form id="FormImport" name="FormImport" class="form-horizontal" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
@@ -24,10 +25,7 @@
                                 opsi="true"></x-input>
                         </div>
                     </div>
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                    <div id="info" class="alert alert-warning text-danger" role="alert" style="display: none;">
                     </div>
                 </div>
                 <div class="modal-footer">

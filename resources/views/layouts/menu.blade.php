@@ -1,7 +1,9 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="{{ url('/dashboard') }}" class="app-brand-link">
-            <span class="menu-text fw-bold">PointApp</span>
+        <img src="{{ asset('assets/img/favicon/smk-n-air-putih.png') }}" alt="SMK Negeri Air Putih"
+            style="width: 50px; height: 50px;" class="me-3">
+        <a href="{{ url('/dashboard') }}" class="app-brand-link d-flex align-items-center">
+            <span class="menu-text fw-bold">SMKN 1 Air Putih</span>
         </a>
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
             <i class="bx bx-chevron-left bx-sm align-middle"></i>
@@ -10,6 +12,9 @@
     <div class="menu-inner-shadow"></div>
     <ul class="menu-inner py-1">
         <x-menu route="{{ route('dashboard') }}" name="dashboard" label="dashboard" icon="bx-home-circle"></x-menu>
+        <li class="menu-header small text-uppercase m-0">
+            <span class="menu-header-text">MENU</span>
+        </li>
         @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
             <li
                 class="menu-item {{ request()->segment(1) == 'tapel' ||
@@ -45,48 +50,14 @@
                         label="Manajemen User"></x-menuDropdown>
                 </ul>
             </li>
-            {{-- <li
-                class="menu-item {{ request()->segment(1) == 'klasifikasi' ||
-                request()->segment(1) == 'surat-masuk' ||
-                request()->segment(1) == 'surat-keluar'
-                    ? 'active open'
-                    : '' }}">
-                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                    <i class="menu-icon tf-icons bx bx-envelope"></i>
-                    <div data-i18n="Form Elements">Manajemen Surat</div>
-                </a>
-                <ul class="menu-sub">
-                    <x-menuDropdown route="{{ route('klasifikasi.index') }}" name="klasifikasi" label="Klasifikasi">
-                    </x-menuDropdown>
-                    <x-menuDropdown route="{{ route('surat-masuk.index') }}" name="surat-masuk" label="Surat Masuk">
-                    </x-menuDropdown>
-                    <x-menuDropdown route="{{ route('surat-keluar.index') }}" name="surat-keluar"
-                        label="Surat Keluar"></x-menuDropdown>
-                </ul>
-            </li> --}}
-            {{-- <x-menu route="{{ route('jadwal.index') }}" name="jadwal" label="Jadwal" icon="bxs-calendar"></x-menu> --}}
             <x-menu route="{{ route('pelanggaran-siswa.index') }}" name="pelanggaran-siswa" label="Point Siswa"
                 icon="bx-detail"></x-menu>
             <x-menu route="#" name="aktivitas-guru" label="Aktivitas Guru" icon="bx-calendar-check"></x-menu>
         @endif
-        @if (auth()->user()->role_id == 3)
+        @if (auth()->user()->role_id == 3 || auth()->user()->role_id == 4)
             <x-menu route="{{ route('point-pelanggaran-siswa') }}" name="point-pelanggaran-siswa"
                 label="Pelanggaran Siswa" icon="bx-detail"></x-menu>
             <x-menu route="#" name="aktivitas-guru" label="Aktivitas Guru" icon="bx-calendar-check"></x-menu>
         @endif
-        {{-- @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 3)
-            <x-menu route="{{ route('absensi.index') }}" name="absensi" label="Absensi"
-                icon="bx-clipboard"></x-menu>
-        @endif --}}
-
-        {{-- @if (auth()->user()->role_id == 3)
-            <x-menu route="#" name="jadwal" label="Jadwal" icon="bx-calendar"></x-menu>
-            <x-menu route="#" name="laporan" label="Laporan Kehadiran" icon="bx-spreadsheet"></x-menu>
-        @endif --}}
-
-        {{-- @if (auth()->user()->role_id == 4)
-            <x-menu route="#" name="jadwal" label="Jadwal" icon="bx-calendar"></x-menu>
-            <x-menu route="#" name="laporan" label="Laporan Kehadiran" icon="bx-spreadsheet"></x-menu>
-        @endif --}}
     </ul>
 </aside>

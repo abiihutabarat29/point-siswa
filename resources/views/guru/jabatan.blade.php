@@ -64,8 +64,8 @@
                 </div>
                 <div class="col-md-6 p-2">
                     <x-card>
-                        <input type="hidden" name="guru_id" value="{{ $guru->id }}">
-                        <x-dropdown name="jabatan_id" label="Jabatan">
+                        <input type="hidden" name="guru_id" value="{{ $guru->id }}" opsi="true">
+                        <x-dropdown name="jabatan_id" label="Jabatan" opsi="true">
                             @foreach ($jabatan as $jab)
                                 <option value="{{ $jab->id }}"
                                     @if ($guru->jabatan_guru) @selected($guru->jabatan_guru->jabatan_id == $jab->id) @endif>

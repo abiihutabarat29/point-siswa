@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('pelanggaran_siswa', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('tapel_id');
+            $table->unsignedBigInteger('semester_id');
             $table->unsignedBigInteger('rombel_id');
             $table->unsignedBigInteger('siswa_id');
             $table->unsignedBigInteger('pelanggaran_id');
@@ -23,6 +25,8 @@ return new class extends Migration
             $table->string('status')->default(0);
             $table->timestamps();
 
+            $table->foreign('tapel_id')->references('id')->on('tapel')->onDelete('cascade');
+            $table->foreign('semester_id')->references('id')->on('semester')->onDelete('cascade');
             $table->foreign('rombel_id')->references('id')->on('rombel');
             $table->foreign('siswa_id')->references('id')->on('siswa')->onDelete('cascade');
             $table->foreign('pelanggaran_id')->references('id')->on('pelanggaran');

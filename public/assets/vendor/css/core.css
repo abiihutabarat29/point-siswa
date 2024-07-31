@@ -163,6 +163,19 @@ p {
   margin-bottom: 1rem;
 }
 
+@keyframes blink {
+    0% { border-right-color: rgba(0, 0, 0, 0); }
+    50% { border-right-color: black; }
+    100% { border-right-color: rgba(0, 0, 0, 0); }
+}
+
+#typing-text {
+    display: inline-block;
+    font-size: 1.0em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 abbr[title] {
   text-decoration: underline dotted;
   cursor: help;

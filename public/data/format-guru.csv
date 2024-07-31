@@ -1,68 +1,76 @@
 id,name,tmp_lahir,tgl_lahir,gender,nip,status
-1,"Sulistio, S.Pd",Bandar Pasir Mandoge,1983-02-06,L,198302062010011021,PNS
-2,"Manuara Gultom, S.Pd",Sibisa,1965-10-24,L,196510241995031001,PNS
-3,"Syukriah, S.Pd",Bandar Tinggi,1984-06-06,P,198406062009032007,PNS
-4,"Sri Asti Nurmaya, S.Pd",Bandar Tinggi,1986-10-24,P,198610242009032005,PNS
-5,"Listawati Sitompul, S.Th",Pematang Siantar,1983-04-12,P,198304122009032006,PNS
-6,"Hotma Pangaribuan, S. Pd",Pardinggaran,1977-06-02,P,197706022010012011,PNS
-7,"Lasma Fitriwanti Purba, S.Kom",Rimbo Bujang,1985-05-13,P,198505132010012034,PNS
-8,"Elvi Syafitri Pohan, S.Pd",Sibolga,1982-08-28,P,198208282008042001,PNS
-9,"Apner Nainggolan, S.Pd",Sei Timah,1984-02-08,L,198402082009031002,PNS
-10,"Monika MM Tampubolon, S.Pd",Tanjung Gading,1984-12-13,P,198412132009032004,PNS
-11,"Yuyun Anggia Murni, S.Si",Medan,1974-06-22,P,197406222009032002,PNS
-12,"Enni Susila, S.Pd",Lima Puluh,1976-06-29,P,197606292009032001,PNS
-13,"Hendra Robertho Siregar, S.Kom",Namo Sira-sira,1983-10-26,L,198310262009031001,PNS
-14,"Uli Damanik, S.Pd",Bangun Purba,1981-05-12,P,198105122010012026,PNS
-15,"Ahmad Fauzi, S.Pd",Sipare-pare,1984-09-26,L,198409262010011014,PNS
-16,"Henni Dame Sitopu, S.Pd",Galang,1986-12-15,P,198612152010012027,PNS
-17,"Lily Agustina, S.Pd",Pasar Lapan,1981-07-07,P,198107072011012017,PNS
-18,"Ratna Sari Apriani, S.Si",Medan,1980-04-02,P,198004022009032007,PNS
-19,"Syarifah Mahani, S.Psi",Sipare-Pare,1970-11-12,P,197011122009032001,PNS
-20,"Bambang Sujatmiko, S.Kom",Medan,1983-03-21,L,198303212009031005,PNS
-21,"Nurlina, S.Pd",Sei Berombang,1971-08-23,P,197108232009032001,PNS
-22,"Hotdiasnita Marbun, S.Kom",Parbotihan,1983-02-03,P,198302032010012025,PNS
-23,"Solihah, S.Ag",Kecamatan Sukaraja,1972-08-28,P,197208282010012008,PNS
-24,"Simon Sebayang, S.Pd",Kidupen,1982-09-28,L,198209282011011011,PNS
-25,"Sri Wahyuni, S.Pd",Pasar Lapan,1981-07-07,P,198107072014062003,PNS
-26,"Rusmawati Siallagan, S.Pd",Sibara-bara,1968-07-19,P,196807192014062002,PNS
-27,"Rusmani Nario Lubis, S.S",LumbanRau,1978-11-17,P,197811172014062005,PNS
-28,"Indra Utama, S.Pd",Pasar Lapan,1974-10-11,L,197410112007011003,PNS
-29,"Imam Fakhruddin, S.Pd",Asahan,1990-04-21,L,19900421,PNS
-30,"Sahril, S.Pd",Sukaraja,1965-03-03,L,19650303,GTT
-31,"Suratno, S.Ag",P. Pompa,1969-07-09,L,19690709,GTT
-32,"Rizal Amin, S.Pd.I",Sukaraja,1977-11-21,L,19771121,GTT
-33,"Esther Nainggolan, S.Pd",Indrapura,1980-10-27,P,19801027,GTT
-34,"Sri Winingsih, S.E",Petatal,1980-11-17,P,19801117,GTT
-35,"Muhammad Fadli, ST",Sukaraja,1982-02-06,L,19820206,GTT
-36,"Jonta Hari Saragih, S.Pd",Simodong,1985-01-23,L,19850123,GTT
-37,"Faizs Mazruk, S.kom",Simpang Gambus,1989-10-06,L,19891006,GTT
-38,"Ihsan Dede Pradipta, S.Pd",Tebing Tinggi,1990-12-05,L,19901205,GTT
-39,"Erlangga Dewantara, S.ST",Tanjung Morawa,1990-11-30,L,19901130,GTT
-40,"Muhammad Sazly, S.Pd",Tanjung Morawa,1983-08-06,L,19830806,GTT
-41,"Hadi Tiawarman, S.Pd",Indrapura,1992-07-14,L,19920714,GTT
-42,"Rahmad, S.Pd",Tanjung Kubah,1992-06-17,L,19920617,GTT
-43,"Faridah Hanum, S.Pd",Sukaraja,1992-08-18,P,19920818,GTT
-44,"Muhammad Syukri Tambak, S.Pd",Payamambang,1990-06-26,L,19900626,GTT
-45,"Marliana Putri, S.Pd",Tanah Tinggi,1987-04-05,P,19870405,GTT
-46,"Munawar Husnul Arifin, S.Pd.I",Sukaraja,1993-06-26,L,19930626,GTT
-47,"Khairul Azhar, S.Pd",Dolok Sagala,1992-05-08,L,19920508,GTT
-48,"Sritika Dewi, ST",Nanas Siam,1994-03-18,P,19940318,GTT
-49,"Khairul Anwar, S.Pd",Kisaran,1983-12-25,L,19831225,GTT
-50,"Tri Wahyuni, S.Pd",Sukaraja,1995-06-29,P,19950629,GTT
-51,"Eza Prayuda Putra, S.T",Lhokseumawe,1992-06-06,L,19920606,GTT
-52,"Abdul Azis, SE",Sukaraja,1992-02-26,L,19920226,GTT
-53,"Devyana Suri, SE",Tanah Merah,1995-12-11,P,19951211,GTT
-54,Wanda Azhury Syahputra,Sipare - Pare,1999-01-24,L,19990124,GTT
-55,"Niru Sapla, S.Pd",Empat Negeri,1996-09-30,P,19960930,GTT
-56,"Indri Eka Syafitri, S.Pd",Lubuk Keladi,1998-02-08,P,19980208,GTT
-57,"Riska Safitri, S.Pd",TG. Kubah,1997-02-24,P,19970224,GTT
-58,"Siti Rahayu Damanik, S.Pd",Pematang Jering. 10 September 1996,2000-01-01,P,20000101,GTT
-59,"Paridah, S.Kom",Gambus Laut,1999-02-01,P,19990201,GTT
-60,Aryo Pratama,Sumber Padi,2000-08-04,L,20000804,GTT
-61,"Ellin Angelina Sijabat, S.Pd",Pematang Panjang,1996-04-17,P,19960417,GTT
-62,"Vivi Anggraini Sinaga, S.Pd",Silau Manik Sinaga,1998-12-17,P,19981217,GTT
-63,"Sri Ningsih, S.Pd",Sukaraja,1999-05-18,P,19990518,GTT
-64,"Azri Rahmadi, S.Si",Ujung Kubu,1996-11-18,L,19961118,GTT
-65,"Tiya Uttari, S.Kom",Gunung Bandung,2000-07-05,P,20000705,GTT
-66,"Maulana Ghifari Lubis, S.Pd",-,2000-01-01,L,20000101,GTT
-67,"Alhafizul Imamurobbi, S.Pd",-,2000-01-02,L,20000102,GTT
+"1,""Sulistio, S.Pd"",Bandar Pasir Mandoge,1983-02-06,L,198302062010011021,PNS"
+"2,""Manuara Gultom, S.Pd"",Sibisa,1965-10-24,L,196510241995031001,PNS"
+"3,""Syukriah, S.Pd"",Bandar Tinggi,1984-06-06,P,198406062009032007,PNS"
+"4,""Sri Asti Nurmaya, S.Pd"",Bandar Tinggi,1986-10-24,P,198610242009032005,PNS"
+"5,""Listawati Sitompul, S.Th"",Pematang Siantar,1983-04-12,P,198304122009032006,PNS"
+"6,""Hotma Pangaribuan, S. Pd"",Pardinggaran,1977-06-02,P,197706022010012011,PNS"
+"7,""Lasma Fitriwanti Purba, S.Kom"",Rimbo Bujang,1985-05-13,P,198505132010012034,PNS"
+"8,""Elvi Syafitri Pohan, S.Pd"",Sibolga,1982-08-28,P,198208282008042001,PNS"
+"9,""Apner Nainggolan, S.Pd"",Sei Timah,1984-02-08,L,198402082009031002,PNS"
+"10,""Monika MM Tampubolon, S.Pd"",Tanjung Gading,1984-12-13,P,198412132009032004,PNS"
+"11,""Yuyun Anggia Murni, S.Si"",Medan,1974-06-22,P,197406222009032002,PNS"
+"12,""Enni Susila, S.Pd"",Lima Puluh,1976-06-29,P,197606292009032001,PNS"
+"13,""Hendra Robertho Siregar, S.Kom"",Namo Sira-sira,1983-10-26,L,198310262009031001,PNS"
+"14,""Uli Damanik, S.Pd"",Bangun Purba,1981-05-12,P,198105122010012026,PNS"
+"15,""Ahmad Fauzi, S.Pd"",Sipare-pare,1984-09-26,L,198409262010011014,PNS"
+"16,""Henni Dame Sitopu, S.Pd"",Galang,1986-12-15,P,198612152010012027,PNS"
+"17,""Lily Agustina, S.Pd"",Pasar Lapan,1981-07-07,P,198107072011012017,PNS"
+"18,""Ratna Sari Apriani, S.Si"",Medan,1980-04-02,P,198004022009032007,PNS"
+"19,""Syarifah Mahani, S.Psi"",Sipare-Pare,1970-11-12,P,197011122009032001,PNS"
+"20,""Bambang Sujatmiko, S.Kom"",Medan,1983-03-21,L,198303212009031005,PNS"
+"21,""Nurlina, S.Pd"",Sei Berombang,1971-08-23,P,197108232009032001,PNS"
+"22,""Hotdiasnita Marbun, S.Kom"",Parbotihan,1983-02-03,P,198302032010012025,PNS"
+"23,""Solihah, S.Ag"",Kecamatan Sukaraja,1972-08-28,P,197208282010012008,PNS"
+"24,""Simon Sebayang, S.Pd"",Kidupen,1982-09-28,L,198209282011011011,PNS"
+"25,""Sri Wahyuni, S.Pd"",Pasar Lapan,1981-07-07,P,198107072014062003,PNS"
+"26,""Rusmawati Siallagan, S.Pd"",Sibara-bara,1968-07-19,P,196807192014062002,PNS"
+"27,""Rusmani Nario Lubis, S.S"",LumbanRau,1978-11-17,P,197811172014062005,PNS"
+"28,""Indra Utama, S.Pd"",Pasar Lapan,1974-10-11,L,197410112007011003,PNS"
+"29,""Imam Fakhruddin, S.Pd"",Asahan,1990-04-21,L,19900421,PNS"
+"30,""Sahril, S.Pd"",Sukaraja,1965-03-03,L,19650303,GTT"
+"31,""Suratno, S.Ag"",P. Pompa,1969-07-09,L,19690709,GTT"
+"32,""Rizal Amin, S.Pd.I"",Sukaraja,1977-11-21,L,19771121,GTT"
+"33,""Esther Nainggolan, S.Pd"",Indrapura,1980-10-27,P,19801027,GTT"
+"34,""Sri Winingsih, S.E"",Petatal,1980-11-17,P,19801117,GTT"
+"35,""Muhammad Fadli, ST"",Sukaraja,1982-02-06,L,19820206,GTT"
+"36,""Jonta Hari Saragih, S.Pd"",Simodong,1985-01-23,L,19850123,GTT"
+"37,""Faizs Mazruk, S.kom"",Simpang Gambus,1989-10-06,L,19891006,GTT"
+"38,""Ihsan Dede Pradipta, S.Pd"",Tebing Tinggi,1990-12-05,L,19901205,GTT"
+"39,""Erlangga Dewantara, S.ST"",Tanjung Morawa,1990-11-30,L,19901130,GTT"
+"40,""Muhammad Sazly, S.Pd"",Tanjung Morawa,1983-08-06,L,19830806,GTT"
+"41,""Hadi Tiawarman, S.Pd"",Indrapura,1992-07-14,L,19920714,GTT"
+"42,""Rahmad, S.Pd"",Tanjung Kubah,1992-06-17,L,19920617,GTT"
+"43,""Faridah Hanum, S.Pd"",Sukaraja,1992-08-18,P,19920818,GTT"
+"44,""Muhammad Syukri Tambak, S.Pd"",Payamambang,1990-06-26,L,19900626,GTT"
+"45,""Marliana Putri, S.Pd"",Tanah Tinggi,1987-04-05,P,19870405,GTT"
+"46,""Munawar Husnul Arifin, S.Pd.I"",Sukaraja,1993-06-26,L,19930626,GTT"
+"47,""Khairul Azhar, S.Pd"",Dolok Sagala,1992-05-08,L,19920508,GTT"
+"48,""Sritika Dewi, ST"",Nanas Siam,1994-03-18,P,19940318,GTT"
+"49,""Khairul Anwar, S.Pd"",Kisaran,1983-12-25,L,19831225,GTT"
+"50,""Tri Wahyuni, S.Pd"",Sukaraja,1995-06-29,P,19950629,GTT"
+"51,""Eza Prayuda Putra, S.T"",Lhokseumawe,1992-06-06,L,19920606,GTT"
+"52,""Abdul Azis, SE"",Sukaraja,1992-02-26,L,19920226,GTT"
+"53,""Devyana Suri, SE"",Tanah Merah,1995-12-11,P,19951211,GTT"
+54,Wanda Azhury Syahputra,Sipare - Pare,1999-01-24,L,19990124,Honor Sekolah
+"55,""Niru Sapla, S.Pd"",Empat Negeri,1996-09-30,P,19960930,Honor Sekolah"
+"56,""Indri Eka Syafitri, S.Pd"",Lubuk Keladi,1998-02-08,P,19980208,Honor Sekolah"
+"57,""Riska Safitri, S.Pd"",TG. Kubah,1997-02-24,P,19970224,Honor Sekolah"
+"58,""Siti Rahayu Damanik, S.Pd"",Pematang Jering. 10 September 1996,2000-01-01,P,20000101,Honor Sekolah"
+"59,""Paridah, S.Kom"",Gambus Laut,1999-02-01,P,19990201,Honor Sekolah"
+"60,""Aryo Pratama"",Sumber Padi,2000-08-04,L,20000804,Honor Sekolah"
+"61,""Ellin Angelina Sijabat, S.Pd"",Pematang Panjang,1996-04-17,P,19960417,Honor Sekolah"
+"62,""Vivi Anggraini Sinaga, S.Pd"",Silau Manik Sinaga,1998-12-17,P,19981217,Honor Sekolah"
+"63,""Sri Ningsih, S.Pd"",Sukaraja,1999-05-18,P,19990518,Honor Sekolah"
+"64,""Azri Rahmadi, S.Si"",Ujung Kubu,1996-11-18,L,19961118,Honor Sekolah"
+"65,""Tiya Uttari, S.Kom"",Gunung Bandung,2000-07-05,P,20000705,Honor Sekolah"
+"66,""Maulana Ghifari Lubis, S.Pd"",Sipare-pare,2000-01-01,L,20000101,Honor Sekolah"
+"67,""Alhafizul Imamurobbi, S.Pd"",Karang Baru,2000-01-02,L,20000102,Honor Sekolah"
+"68,""Supriani"",Sumber Padi,1974-08-08,P,19740808,Honor Sekolah"
+"69,""Edo Saputra Ketararen"",Kebun Kopi,1995-11-29,L,19951129,Honor Sekolah"
+"70,""M. Ulul Anbiyah"",Medan,1994-12-13,L,19941213,Honor Sekolah"
+"71,""Dewi Artika, AMkeb"",Tanah Gambus,1992-01-10,P,19920110,Honor Sekolah"
+"72,""Putri Amaliya"",Sukaraja,2002-01-24,P,20020124,Honor Sekolah"
+"73,""Nursiti Sari"",Aras,2004-07-31,P,20040731,Honor Sekolah"
+"74,""Audina Ismi"",Desa Lalang,1999-07-23,P,19990723,Honor Sekolah"
+"75,""Dian Amalia, S,Kom"",Pulau Sejuk,2000-03-07,P,20000307,Honor Sekolah"

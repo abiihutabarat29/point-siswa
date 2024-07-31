@@ -3,7 +3,12 @@
         <x-card menu="{{ $menu }}">
             <div class="dt-action-buttons text-end pt-3 pt-md-0">
                 <div class="dt-buttons">
-                    <x-createBtn></x-createBtn>
+                    <button class="dt-button btn btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button"
+                        id="create">
+                        <span>
+                            <span class="d-lg-inline-block">LAPORKAN</span>
+                        </span>
+                    </button>
                 </div>
             </div>
             <x-table>

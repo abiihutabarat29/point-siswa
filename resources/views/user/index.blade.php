@@ -8,10 +8,9 @@
             </div>
             <x-table>
                 <th style="width:5%">#</th>
-                <th>ID Card</th>
                 <th>Nama</th>
-                <th>Email</th>
-                <th>Role</th>
+                <th style="width:25%">Email</th>
+                <th class="text-center" style="width:15%">Role</th>
                 <th class="text-center" style="width:5%">Action</th>
             </x-table>
         </x-card>
@@ -55,10 +54,6 @@
                         }
                     },
                     {
-                        data: "id_card",
-                        name: "id_card",
-                    },
-                    {
                         data: "name",
                         name: "name",
                     },
@@ -85,7 +80,7 @@
                 // Edit
                 var editUrl = "{{ route('manajemen-user.index') }}";
                 var editHeading = "Edit {{ $menu }}";
-                var field = ['name', 'email'];
+                var field = ['name', 'email', 'role_id'];
                 editModel(editUrl, editHeading, field)
 
                 // Save

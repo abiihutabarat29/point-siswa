@@ -1,6 +1,6 @@
 function alertToastr(message) {
     iziToast.show({
-        color: "#71dd37",
+        color: "#272ab9",
         messageColor: "#ffffff",
         message: message,
         timeout: 5000,
@@ -15,8 +15,6 @@ function alertToastr(message) {
 function alertToastrErr(message) {
     iziToast.show({
         color: "#f73131",
-        titleColor: "#ffffff",
-        title: "<i class='bx bx-sad'></i> Error",
         messageColor: "#ffffff",
         message: message,
         timeout: 3000,
@@ -24,20 +22,7 @@ function alertToastrErr(message) {
         transitionIn: "flipInX",
         transitionOut: "flipOutX",
         position: "topRight",
-        progressBarColor: "rgb(255, 0, 0)",
-        buttons: [
-            [
-                "<button type='button' class='btn btn-outline-danger text-white'>Close</button>",
-                function (instance, toast) {
-                    instance.hide(
-                        {
-                            transitionOut: "fadeOutUp",
-                        },
-                        toast
-                    );
-                },
-            ],
-        ],
+        progressBarColor: "#ffffff",
     });
 }
 
@@ -85,10 +70,10 @@ function editModel(editUrl, editHeading, field) {
                 $("#" + value).val(data[value]);
                 console.log(data)
             });
-            if (data.role_id == 1 || data.role_id == 2 || data.role_id == 3) {
-                $('#role-dropdown').show();
-            } else {
+            if (data.role_id == 6 || data.role_id == 7) {
                 $('#role-dropdown').hide();
+            } else {
+                $('#role-dropdown').show();
             }
             if (data.file_surat) {
                 var fileUrl = "/download/" + editId;
@@ -316,14 +301,15 @@ function Detail(url, path, heading) {
                         : 'Perempuan';
 
                     var tanggal = new Date(detail.created_at);
-                    var options = { day: 'numeric', month: 'long', year: 'numeric' };
+                    var options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
                     var formattedDate = tanggal.toLocaleDateString('id-ID', options);
+                    var formattedTime = tanggal.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
 
                     var keteranganContent = detail.keterangan
                         ? detail.keterangan
                         : "<small class='text-danger'>Tidak ada catatan.</small>";
 
-                    var alasanContent = detail.status == 3
+                    var alasanContent = detail.status == 2
                         ? "<hr><h6 class='card-title mb-3'>Alasan Penolakan :</h6>" +
                         "<dd><i class='bx bx-user-voice'></i> : " + (detail.alasan ? detail.alasan : "Tidak ada alasan.") + "</dd>"
                         : "";
@@ -354,6 +340,10 @@ function Detail(url, path, heading) {
                         "<dd class='col-sm-8'>: " + detail.pelanggaran.name + "</dd>" +
                         "<dt class='col-sm-4'>Tanggal</dt>" +
                         "<dd class='col-sm-8'>: " + formattedDate + "</dd>" +
+                        "<dt class='col-sm-4'>Waktu</dt>" +
+                        "<dd class='col-sm-8'>: " + formattedTime + "</dd>" +
+                        "<dt class='col-sm-4'>Pelapor</dt>" +
+                        "<dd class='col-sm-8'>: " + detail.pelapor + "</dd>" +
                         "<dt class='col-sm-4'>Catatan Keterangan</dt>" +
                         "<dd class='col-sm-12'>" + keteranganContent + "</dd>" +
                         "</dl>" +
@@ -373,7 +363,6 @@ function Detail(url, path, heading) {
         });
     });
 }
-
 
 function Scan(urlScan, table) {
 
@@ -451,6 +440,133 @@ function Review(dokumenUrl, dokumenPath) {
                     '</div>'
                 );
             });
+        });
+    });
+}
+
+function konfirmasiSkor(url, table) {
+    $("body").on('click', '.konfirmasi', function () {
+        var id = $(this).data('id');
+        $("#modal-konfirmasi").data('id', id).modal("show");
+    });
+
+    $("#modal-konfirmasi").on('hidden.bs.modal', function () {
+        $(this).removeData('id');
+        $("#konfirmasiBtn").html("Konfirmasi").removeAttr("disabled");
+    });
+
+    $("#konfirmasiBtn").click(function (e) {
+        e.preventDefault();
+
+        var id = $("#modal-konfirmasi").data('id');
+        if (!id) {
+            return;
+        }
+
+        var csrfToken = $('meta[name="csrf-token"]').attr("content");
+        $(this)
+            .html("<span class='spinner-border spinner-border-sm'></span><span class='visually-hidden'></span>")
+            .attr("disabled", "disabled");
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: {
+                _token: csrfToken,
+                id: id,
+            },
+            success: function (data) {
+                if (data.errors) {
+                    $("#konfirmasiBtn")
+                        .html("Konfirmasi")
+                        .removeAttr("disabled");
+                    alertToastr(data.errors);
+                } else {
+                    if (table) {
+                        table.draw();
+                    }
+                    alertToastr(data.success);
+                    $("#konfirmasiBtn")
+                        .html("Konfirmasi")
+                        .removeAttr("disabled");
+                    $("#modal-konfirmasi").modal("hide");
+                }
+            },
+            error: function (xhr) {
+                console.error(xhr.responseText);
+                $("#konfirmasiBtn")
+                    .html("Konfirmasi")
+                    .removeAttr("disabled");
+                alert('Terjadi kesalahan. Silakan coba lagi.');
+            }
+        });
+    });
+}
+
+function tolakSkor(url, table) {
+    $("body").on('click', '.tolak', function () {
+        var id = $(this).data('id');
+        $("#ajaxForm").trigger("reset");
+        $("#modal-tolak").data('id', id).modal("show");
+    });
+
+    $("#modal-tolak").on('hidden.bs.modal', function () {
+        $(this).removeData('id');
+        $("#tolakBtn").html("Tolak").removeAttr("disabled");
+    });
+
+    $("#tolakBtn").click(function (e) {
+        e.preventDefault();
+
+        var id = $("#modal-tolak").data('id');
+        var alasan = $("#alasan").val();
+
+        var csrfToken = $('meta[name="csrf-token"]').attr("content");
+
+        $(this)
+            .html("<span class='spinner-border spinner-border-sm'></span><span class='visually-hidden'></span>")
+            .attr("disabled", "disabled");
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: {
+                _token: csrfToken,
+                id: id,
+                alasan: alasan,
+            },
+            success: function (data) {
+                if (data.errors) {
+                    $("#info-error").html("");
+                    $.each(data.errors, function (key, value) {
+                        $("#info-error").show();
+                        $("#info-error").append(
+                            "<strong><li>" + value + "</li></strong>"
+                        );
+                        $("#info-error").fadeOut(5000);
+                        $("#tolakBtn")
+                            .html("Tolak")
+                            .removeAttr("disabled");
+                    });
+                    alertToastrErr(data.errors);
+                } else {
+                    if (table) {
+                        table.draw();
+                    }
+                    alertToastr(data.success);
+                    $("#tolakBtn")
+                        .html("Tolak")
+                        .removeAttr("disabled");
+                    $("#modal-tolak").modal("hide");
+                }
+            },
+            error: function (xhr) {
+                console.error(xhr.responseText);
+                $("#tolakBtn")
+                    .html("Tolak")
+                    .removeAttr("disabled");
+                alert('Terjadi kesalahan. Silakan coba lagi.');
+            }
         });
     });
 }

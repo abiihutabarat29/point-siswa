@@ -91,6 +91,7 @@
                                 <x-dropdownHorizontal name="status" label="Status Guru" icon="bx-award">
                                     <option value="PNS" @selected($guru->status == 'PNS')>PNS</option>
                                     <option value="GTT" @selected($guru->status == 'GTT')>GTT</option>
+                                    <option value="Honor Sekolah" @selected($guru->status == 'Honor Sekolah')>Honor Sekolah</option>
                                 </x-dropdownHorizontal>
                             </div>
                             <div class="tab-pane fade" id="navs-pills-data" role="tabpanel">

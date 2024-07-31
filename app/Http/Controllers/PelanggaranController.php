@@ -15,9 +15,12 @@ class PelanggaranController extends Controller
         if ($request->ajax()) {
             $data = Pelanggaran::latest();
             return Datatables::of($data)
+                ->addColumn('bobot', function ($data) {
+                    return '<center>' . $data->bobot . '<center>';
+                })
                 ->addColumn('action', function ($row) {
                     return '
-                        <div class="col mb-0">
+                        <center><div class="col mb-0">
                                 <div class="dropdown">
                                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
                                     data-bs-toggle="dropdown">
@@ -36,9 +39,9 @@ class PelanggaranController extends Controller
                                         </button>
                                     </div>
                                 </div>
-                            </div>';
+                            </div></center>';
                 })
-                ->rawColumns(['action'])
+                ->rawColumns(['action', 'bobot'])
                 ->make(true);
         }
 

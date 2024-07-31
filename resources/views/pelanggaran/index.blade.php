@@ -11,18 +11,18 @@
             <x-table>
                 <th style="width:5%">#</th>
                 <th>Nama Pelanggaran</th>
-                <th>Bobot</th>
+                <th style="width:25%" class="text-center">Bobot</th>
                 @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
-                    <th>Action</th>
+                    <th class="text-center" style="width:5%">Action</th>
                 @endif
             </x-table>
         </x-card>
     @endsection
     @section('modal')
         <x-offcanvas>
-            <x-inputPlaceholder type="text" name="name" label="Nama Pelanggaran"
-                placeholder="contoh: Bolos"></x-inputPlaceholder>
-            <x-input type="number" name="bobot" label="Bobot" value=""></x-input>
+            <x-inputPlaceholder type="text" name="name" label="Nama Pelanggaran" placeholder="contoh: Bolos"
+                opsi="true"></x-inputPlaceholder>
+            <x-input type="number" name="bobot" label="Bobot" value="" opsi="true"></x-input>
         </x-offcanvas>
         <x-delete></x-delete>
     @endsection

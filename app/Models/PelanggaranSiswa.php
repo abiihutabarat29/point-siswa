@@ -12,6 +12,8 @@ class PelanggaranSiswa extends Model
     protected $table = 'pelanggaran_siswa';
 
     protected $fillable = [
+        'tapel_id',
+        'semester_id',
         'rombel_id',
         'siswa_id',
         'pelanggaran_id',

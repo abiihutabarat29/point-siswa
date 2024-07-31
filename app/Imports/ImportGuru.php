@@ -11,12 +11,12 @@ class ImportGuru implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new Guru([
-            'name'          => $row['name'],
-            'tmp_lahir'     => $row['tmp_lahir'],
-            'tgl_lahir'     => $row['tgl_lahir'],
-            'gender'        => $row['gender'],
-            'nip'           => $row['nip'],
-            'status'        => $row['status'],
+            'name'          => $row['name'] ?? null,
+            'tmp_lahir'     => $row['tmp_lahir'] ?? null,
+            'tgl_lahir'     => $row['tgl_lahir'] ?? null,
+            'gender'        => $row['gender'] ?? null,
+            'nip'           => $row['nip'] ?? null,
+            'status'        => $row['status'] ?? null,
         ]);
     }
 }

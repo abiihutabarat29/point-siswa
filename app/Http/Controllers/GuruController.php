@@ -14,6 +14,8 @@ use App\Models\Tapel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
@@ -117,11 +119,10 @@ class GuruController extends Controller
 
         User::updateOrCreate(
             [
-                'id_card' => $request->nip
+                'guru_id' => $request->hidden_id
             ],
             [
                 'guru_id'   => $guru->id,
-                'id_card'   => $request->nip,
                 'name'      => $request->name,
                 'password'  => "12345678",
                 'role_id'   => 3,
@@ -141,7 +142,7 @@ class GuruController extends Controller
         $data = Guru::find($id);
         Storage::delete('public/guru/' . $data->image);
         $data->delete();
-        $user = User::find('id_card');
+        $user = User::find('guru_id', $data->id);
         if (isset($user)) {
             $user->delete();
         }
@@ -262,11 +263,12 @@ class GuruController extends Controller
     public function import(Request $request)
     {
         $message = array(
-            'file.required' => 'File harus diupload.',
+            'file.required'   => 'File import harus diupload.',
+            'file.mimes'      => 'File harus berektensi xls, xlsx, csv',
         );
 
         $validator = Validator::make($request->all(), [
-            'file'  => 'required',
+            'file'  => 'required|mimes:xls,xlsx,csv',
         ], $message);
 
         if ($validator->fails()) {
@@ -287,7 +289,7 @@ class GuruController extends Controller
 
             User::create(
                 [
-                    'id_card'   => $guru->nip,
+                    'guru_id'   => $guru->id,
                     'name'      => $guru->name,
                     'password'  => "12345678",
                     'role_id'   => 3,
@@ -295,6 +297,6 @@ class GuruController extends Controller
             );
         }
 
-        return response()->json(['success' => 'Guru Import successful!']);
+        return response()->json(['success' => 'Data Guru Import successful!']);
     }
 }

@@ -148,7 +148,6 @@ class SiswaController extends Controller
             ],
             [
                 'siswa_id'  => $siswa->id,
-                'id_card'   => $request->nisn,
                 'name'      => $request->name,
                 'password'  => "12345678",
                 'role_id'   => 4,

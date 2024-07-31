@@ -134,6 +134,7 @@
                     <x-dropdown name="status" label="Status Guru" opsi="true">
                         <option value="PNS">PNS</option>
                         <option value="GTT">GTT</option>
+                        <option value="Honor Sekolah">Honor Sekolah</option>
                     </x-dropdown>
                 </div>
             </div>
@@ -239,14 +240,14 @@
                     });
                 });
 
-                var importHeading = "Import Guru";
+                var importHeading = "Imports Guru";
                 importModel(importHeading)
 
                 $("#saveFile").click(function(e) {
                     e.preventDefault();
                     $(this).html(
                         "<span class='spinner-border spinner-border-sm'></span><span class='visually-hidden'><i> menyimpan...</i></span>"
-                    );
+                    ).attr("disabled", "disabled");
 
                     var form = $("#FormImport")[0];
                     var data = new FormData(form);
@@ -260,18 +261,18 @@
                         processData: false,
                         success: function(data) {
                             if (data.errors) {
-                                $(".alert-danger").html("");
+                                $("#info").html("");
                                 $.each(data.errors, function(key, value) {
-                                    $(".alert-danger").show();
-                                    $(".alert-danger").append(
+                                    $("#info").show();
+                                    $("#info").append(
                                         "<strong><li>" + value + "</li></strong>"
                                     );
-                                    $(".alert-danger").fadeOut(5000);
-                                    $("#saveFile").html("Import");
+                                    $("#info").fadeOut(5000);
+                                    $("#saveFile").html("Import").removeAttr("disabled");
                                 });
                             } else {
                                 alertToastr(data.success);
-                                $("#saveFile").html("Import");
+                                $("#saveFile").html("Import").removeAttr("disabled");
                                 $("#modal-import").modal("hide");
                                 setTimeout(function() {
                                     location.reload();

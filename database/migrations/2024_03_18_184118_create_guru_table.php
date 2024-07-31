@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('guru', function (Blueprint $table) {
             $table->id();
-            $table->string('nip');
+            $table->string('nip')->nullable();;
             $table->string('nik')->nullable();
-            $table->string('name');
-            $table->string('gender');
+            $table->string('name')->nullable();;
+            $table->string('gender')->nullable();;
             $table->string('status')->nullable();
             $table->string('tlp')->nullable();
             $table->string('kode')->nullable();

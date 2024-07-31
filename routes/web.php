@@ -4,21 +4,16 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\GuruMapelController;
-use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\KelasController;
-use App\Http\Controllers\KlasifikasiController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\MapelKelompokController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\PelanggaranSiswaController;
 use App\Http\Controllers\RombelController;
 use App\Http\Controllers\SekolahController;
-use App\Http\Controllers\SiswaAbsensiController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\SiswaRombelController;
-use App\Http\Controllers\SuratKeluarController;
-use App\Http\Controllers\SuratMasukController;
 use App\Http\Controllers\TapelController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -47,13 +42,6 @@ Route::middleware(['auth', 'role:1,2'])->group(function () {
     Route::post('/tapel/he', [TapelController::class, 'storeHE'])->name('tapel.he');
     Route::get('/rombel/get-data', [RombelController::class, 'getData'])->name('rombel.get');
     Route::resource('/tapel', TapelController::class);
-    Route::resource('/klasifikasi', KlasifikasiController::class);
-    Route::resource('/surat-masuk', SuratMasukController::class);
-    Route::get('surat-masuk/download/{id}', [SuratMasukController::class, 'download']);
-    Route::get('surat-masuk/review/{id}', [SuratMasukController::class, 'review']);
-    Route::resource('/surat-keluar', SuratKeluarController::class);
-    Route::get('surat-keluar/download/{id}', [SuratKeluarController::class, 'download']);
-    Route::get('surat-keluar/review/{id}', [SuratKeluarController::class, 'review']);
     Route::resource('/jurusan', JurusanController::class);
     Route::resource('/kelas', KelasController::class);
     Route::resource('/siswa', SiswaController::class);
@@ -94,15 +82,6 @@ Route::middleware(['auth', 'role:1,2'])->group(function () {
         ->name('pelanggaran-siswa.skors');
     Route::post('/pelanggaran-siswa/skors/store-siswa', [PelanggaranSiswaController::class, 'storeSiswa'])
         ->name('pelanggaran-siswa.store-siswa');
-
-    Route::get('/jadwal', [JadwalController::class, 'index'])->name('jadwal.index');
-    Route::get('/jadwal/rombel/{id}', [JadwalController::class, 'rombel'])->name('jadwal.rombel');
-    Route::post('/jadwal/rombel/{id}', [JadwalController::class, 'store'])->name('jadwal.rombel');
-    Route::post('/jadwal/mapel/{id}', [JadwalController::class, 'storeMapel'])->name('jadwal.mapel');
-
-    Route::get('/absensi', [SiswaAbsensiController::class, 'index'])->name('absensi.index');
-    Route::get('/absensi/presensi/{id}/{idm}', [SiswaAbsensiController::class, 'presensi'])->name('absensi.presensi');
-    Route::post('absensi/scan', [SiswaAbsensiController::class, 'scanAbsensi'])->name('absensi.scan');
 });
 
 // Admin, Operator, Guru
@@ -110,12 +89,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
-//Guru
-Route::middleware(['auth', 'role:1,3'])->group(function () {
-
-    Route::get('/absensi', [SiswaAbsensiController::class, 'index'])->name('absensi.index');
-    Route::get('/absensi/presensi/{id}/{idm}', [SiswaAbsensiController::class, 'presensi'])->name('absensi.presensi');
-    Route::post('absensi/scan', [SiswaAbsensiController::class, 'scanAbsensi'])->name('absensi.scan');
+//Guru dan Guru BK
+Route::middleware(['auth', 'role:3,4'])->group(function () {
 
     Route::get('/siswa/rombel/{id}', [SiswaRombelController::class, 'index'])->name('siswa.rombel');
 
@@ -125,8 +100,11 @@ Route::middleware(['auth', 'role:1,3'])->group(function () {
         ->name('point-pelanggaran-siswa');
     Route::post('/point-pelanggaran-siswa/store', [PelanggaranSiswaController::class, 'storePoint'])
         ->name('point-pelanggaran-siswa.store');
-    Route::get('/point-pelanggaran-siswa/point/{id}', [PelanggaranSiswaController::class, 'point'])
-        ->name('point-pelanggaran-siswa.point');
+    Route::get('/point-pelanggaran-siswa/riwayat/{id}', [PelanggaranSiswaController::class, 'riwayat'])
+        ->name('point-pelanggaran-siswa.riwayat');
+
+    Route::post('konfirmasi-skor', [PelanggaranSiswaController::class, 'konfirmasiSkor'])->name('konfirmasi.skor');
+    Route::post('tolak-skor', [PelanggaranSiswaController::class, 'tolakSkor'])->name('tolak.skor');
 });
 
 // Siswa

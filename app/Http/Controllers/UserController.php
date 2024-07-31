@@ -14,7 +14,7 @@ class UserController extends Controller
     {
         $menu = 'Manajemen User';
         if ($request->ajax()) {
-            $data = User::latest();
+            $data = User::where('role_id', '!=', 1)->where('role_id', '!=', 2)->orderBy('id', 'ASC')->get();
             return Datatables::of($data)
                 ->addColumn('email', function ($data) {
                     $email = $data->email ? $data->email : '<span class="text-danger"><i>empty</i></span>';
@@ -27,13 +27,19 @@ class UserController extends Controller
                         $role = "Operator";
                     } elseif ($data->role_id == 3) {
                         $role = "Guru";
-                    } else {
+                    } elseif ($data->role_id == 4) {
+                        $role = "Guru BK";
+                    } elseif ($data->role_id == 5) {
+                        $role = "Kepala Sekolah";
+                    } elseif ($data->role_id == 6) {
                         $role = "Siswa";
+                    } elseif ($data->role_id == 7) {
+                        $role = "Orang Tua";
                     }
-                    return $role;
+                    return '<center>' . $role . '</center>';
                 })
                 ->addColumn('action', function ($row) {
-                    return '<div class="dropdown">
+                    return '<center><div class="dropdown">
                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                             <i class="bx bx-dots-vertical-rounded"></i>
                         </button>
@@ -48,9 +54,9 @@ class UserController extends Controller
                                 <i class="bx bx-trash me-1"></i> Delete
                             </button>
                         </div>
-                    </div>';
+                    </div></center>';
                 })
-                ->rawColumns(['action', 'email'])
+                ->rawColumns(['action', 'email', 'role'])
                 ->make(true);
         }
 
@@ -114,11 +120,7 @@ class UserController extends Controller
 
         if ($user) {
 
-            if ($user && $user->role_id == 3 | $user->role_id == 4) {
-                $role_id = $user->role_id;
-            } else {
-                $role_id = $request->role_id;
-            }
+            $role_id = $request->role_id;
 
             $isChanged = false;
             if (
