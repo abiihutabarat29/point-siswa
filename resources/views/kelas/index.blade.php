@@ -15,7 +15,7 @@
     @endsection
     @section('modal')
         <x-offcanvas>
-            <x-inputPlaceholder type="text" name="name" label="Nama Kelas" placeholder="contoh: X"></x-inputPlaceholder>
+            <x-inputPlaceHolder type="text" name="name" label="Nama Kelas" placeholder="contoh: X"></x-inputPlaceHolder>
         </x-offcanvas>
         <x-delete></x-delete>
     @endsection

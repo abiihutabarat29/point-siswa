@@ -9,10 +9,10 @@
                 @csrf
                 <input type="hidden" name="hidden_idSub" id="hidden_idSub">
                 <div class="modal-body">
-                    <x-inputPlaceholder type="text" name="kodeSub" label="Kode"
-                        placeholder="contoh : C1"></x-inputPlaceholder>
-                    <x-inputPlaceholder type="text" name="nameSub" label="Nama"
-                        placeholder="contoh : C1. Dasar Bidang Keahlian"></x-inputPlaceholder>
+                    <x-inputPlaceHolder type="text" name="kodeSub" label="Kode"
+                        placeholder="contoh : C1"></x-inputPlaceHolder>
+                    <x-inputPlaceHolder type="text" name="nameSub" label="Nama"
+                        placeholder="contoh : C1. Dasar Bidang Keahlian"></x-inputPlaceHolder>
                     <x-dropdown name="parentSub" label="Kel. Utama">
                         @foreach ($kelompokSub as $kel)
                             <option value="{{ $kel->id }}">{{ $kel->name }}</option>

@@ -20,8 +20,8 @@
     @endsection
     @section('modal')
         <x-offcanvas>
-            <x-inputPlaceholder type="text" name="name" label="Nama Pelanggaran" placeholder="contoh: Bolos"
-                opsi="true"></x-inputPlaceholder>
+            <x-inputPlaceHolder type="text" name="name" label="Nama Pelanggaran" placeholder="contoh: Bolos"
+                opsi="true"></x-inputPlaceHolder>
             <x-input type="number" name="bobot" label="Bobot" value="" opsi="true"></x-input>
         </x-offcanvas>
         <x-delete></x-delete>

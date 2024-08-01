@@ -9,10 +9,10 @@
                 @csrf
                 <input type="hidden" name="hidden_idKel" id="hidden_idKel">
                 <div class="modal-body">
-                    <x-inputPlaceholder type="text" name="kodeKel" label="Kode"
-                        placeholder="contoh : A"></x-inputPlaceholder>
-                    <x-inputPlaceholder type="text" name="nameKel" label="Nama"
-                        placeholder="contoh : Kelompok A"></x-inputPlaceholder>
+                    <x-inputPlaceHolder type="text" name="kodeKel" label="Kode"
+                        placeholder="contoh : A"></x-inputPlaceHolder>
+                    <x-inputPlaceHolder type="text" name="nameKel" label="Nama"
+                        placeholder="contoh : Kelompok A"></x-inputPlaceHolder>
                     <x-dropdown name="kategoriKel" label="Kategori">
                         <option value="Wajib">Wajib</option>
                         <option value="Peminatan">Peminatan</option>

@@ -24,9 +24,9 @@
     @endsection
     @section('modal')
         <x-offcanvas>
-            <x-inputPlaceholder type="text" name="name" label="Mata Pelajaran"
-                placeholder="Bahasa Indonesia"></x-inputPlaceholder>
-            <x-inputPlaceholder type="text" name="kode" label="Kode" placeholder="contoh : A1"></x-inputPlaceholder>
+            <x-inputPlaceHolder type="text" name="name" label="Mata Pelajaran"
+                placeholder="Bahasa Indonesia"></x-inputPlaceHolder>
+            <x-inputPlaceHolder type="text" name="kode" label="Kode" placeholder="contoh : A1"></x-inputPlaceHolder>
             <x-dropdown name="kelompok_id" label="Kelompok" value="">
                 @foreach ($kelompok as $kel)
                     <option value="{{ $kel->id }}">{{ $kel->name }}</option>
