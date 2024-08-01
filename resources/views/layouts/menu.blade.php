@@ -1,5 +1,5 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-    <div class="app-brand demo">
+    <div class="app-brand demo mb-3">
         <img src="{{ asset('assets/img/favicon/smk-n-air-putih.png') }}" alt="SMK Negeri Air Putih"
             style="width: 50px; height: 50px;" class="me-3">
         <a href="{{ url('/dashboard') }}" class="app-brand-link d-flex align-items-center">
@@ -10,6 +10,10 @@
         </a>
     </div>
     <div class="menu-inner-shadow"></div>
+    <div class="d-flex justify-content-center align-items-center mb-2">
+        <span class="badge bg-label-secondary me-1">{{ \Carbon\Carbon::now()->isoFormat('dddd, D MMMM Y') }}</span>
+        <span class="badge bg-label-secondary" id="jam"></span>
+    </div>
     <ul class="menu-inner py-1">
         <x-menu route="{{ route('dashboard') }}" name="dashboard" label="dashboard" icon="bx-home-circle"></x-menu>
         <li class="menu-header small text-uppercase m-0">

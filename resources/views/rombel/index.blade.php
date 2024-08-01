@@ -4,7 +4,7 @@
             @if (auth()->user()->role_id == 1 || auth()->user()->role_id == 2)
                 <div class="dt-action-buttons text-end pt-3 pt-md-0">
                     <div class="dt-buttons">
-                        <x-button-right url="{{ route('rombel.create') }}" label="Rombel Baru" icon="bx-plus">
+                        <x-button-right url="{{ route('rombel.create') }}" label="Rombel Baru">
                         </x-button-right>
                     </div>
                 </div>

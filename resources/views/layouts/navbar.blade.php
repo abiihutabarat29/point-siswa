@@ -6,10 +6,6 @@
         </a>
     </div>
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-        <div class="d-flex align-items-center me-auto">
-            <span class="badge bg-label-secondary me-1">{{ \Carbon\Carbon::now()->isoFormat('dddd, D MMMM Y') }}</span>
-            <span class="badge bg-label-secondary me-1" id="jam" class="ms-2"></span>
-        </div>
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             <li class="nav-item lh-1 me-1">
                 <span class="text-capitalize">

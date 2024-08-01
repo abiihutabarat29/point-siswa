@@ -96,7 +96,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const texts = [
-                "Selamat Datang di Sistem Informasi Skor (SISKO)",
+                "Selamat Datang di Aplikasi SISKO",
                 "Silahkan masuk ke akun anda!"
             ];
             const typingTextElement = document.getElementById("typing-text");

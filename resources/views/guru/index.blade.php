@@ -11,18 +11,19 @@
                 <div class="col-md-6 col-xl-4">
                     <div class="card mb-3">
                         <div class="row g-0">
-                            <div class="col-md-3">
+                            <div class="col-md-3 d-flex align-items-center">
                                 @if ($gur->photo == null)
                                     @if ($gur->gender == 'L')
                                         <img src="{{ url('assets/img/avatars/male.png') }}"
-                                            class="img-fluid rounded mt-4 mx-3" alt="">
+                                            class="img-fluid rounded mt-4 mx-3" width="350px" height="350px" alt="Foto Guru">
                                     @else
                                         <img src="{{ url('assets/img/avatars/female.png') }}"
-                                            class="img-fluid rounded mt-4 mx-3" alt="">
+                                            class="img-fluid rounded mt-4 mx-3" width="350px" height="350px"
+                                            alt="Foto Guru">
                                     @endif
                                 @else
                                     <img src="{{ url('storage/guru/' . $gur->photo) }}" class="img-fluid rounded mt-4 mx-3"
-                                        alt="">
+                                        width="300px" height="300px" alt="Foto Guru">
                                 @endif
                             </div>
                             <div class="col-md-9">
