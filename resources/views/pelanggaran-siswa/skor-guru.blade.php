@@ -32,17 +32,17 @@
                 <li>Foto yang diupload maksimal 5MB.</li>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <x-dropdown name="rombel_id" label="Rombel" opsi="true">
+            <x-dropdownModal name="rombel_id" label="Rombel" opsi="true">
                 @foreach ($rombel as $item)
                     <option value="{{ $item->id }}">{{ $item->name }}</option>
                 @endforeach
-            </x-dropdown>
-            <x-dropdown name="siswa_id" label="Siswa" opsi="true"></x-dropdown>
-            <x-dropdown name="pelanggaran_id" label="Pelanggaran" opsi="true">
+            </x-dropdownModal>
+            <x-dropdownModal name="siswa_id" label="Siswa" opsi="true"></x-dropdownModal>
+            <x-dropdownModal name="pelanggaran_id" label="Pelanggaran" opsi="true">
                 @foreach ($pelanggaran as $p)
                     <option value="{{ $p->id }}">{{ $p->name }}</option>
                 @endforeach
-            </x-dropdown>
+            </x-dropdownModal>
             <div class="mb-3">
                 <img class="d-block rounded" id="preview" alt="Image" width="120">
             </div>
